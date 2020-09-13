@@ -1,0 +1,11 @@
+$dark-blue: #384254;
+$red: #e7384a;
+$pastel: #f6efeb;
+$light-blue: #9db3d9;
+
+$bp-tablet: 1024px;
+$bp-mobile: 768px;
+$bp-small-mobile: 320px;
+$mq-tablet: '(max-width: #{$bp-tablet})';
+$mq-mobile: '(max-width: #{$bp-mobile})';
+$mq-small-mobile: '(max-width: #{$bp-small-mobile})';

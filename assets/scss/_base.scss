@@ -1,0 +1,15 @@
+:root {
+  font-size: 62.5%;
+  font-family: "The matter", sans-serif;
+  line-height: 1.5;
+  @media #{$mq-small-mobile} {
+    font-size: 53%;
+  }
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
