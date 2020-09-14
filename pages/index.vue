@@ -53,7 +53,6 @@ import Intro1 from '~/components/intro/Intro1'
 import Intro2 from '~/components/intro/intro2'
 import Intro3 from '~/components/intro/intro3'
 import Intro4 from '~/components/intro/Intro4'
-import Intro5 from '~/components/intro/Intro5'
 import Intro6 from '~/components/intro/Intro6'
 import Intro7 from '~/components/intro/Intro7'
 
@@ -66,7 +65,6 @@ export default {
     Intro2,
     Intro3,
     Intro4,
-    Intro5,
     Intro6,
     Intro7
   },
