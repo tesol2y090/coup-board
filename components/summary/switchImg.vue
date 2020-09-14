@@ -1,17 +1,17 @@
 <template>
-  <div class="switch-img-container">
+  <div class="img-container">
     <img v-if="selectedImg === 'left'" :src="chart41" />
     <img v-else :src="chart42" />
     <div class="switch-container">
       <div
         @click="handleChangeSlide('left')"
-        :class="selectedImg === 'left' ? 'switch-btn-active' : 'switch-btn'"
+        :class="selectedImg === 'left' ? 'btn-active' : 'btn'"
       >
         ก่อนรัฐประหาร’ 57
       </div>
       <div
         @click="handleChangeSlide('right')"
-        :class="selectedImg === 'right' ? 'switch-btn-active' : 'switch-btn'"
+        :class="selectedImg === 'right' ? 'btn-active' : 'btn'"
       >
         หลังรัฐประหาร’ 57
       </div>
@@ -37,7 +37,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.switch-img-container {
+.img-container {
   margin: 3rem 0;
 }
 
@@ -53,7 +53,7 @@ export default {
   display: flex;
 }
 
-.switch-btn {
+.btn {
   width: 50%;
   display: flex;
   align-items: center;
@@ -62,7 +62,7 @@ export default {
   justify-content: center;
 }
 
-.switch-btn-active {
+.btn-active {
   width: 50%;
   display: flex;
   align-items: center;

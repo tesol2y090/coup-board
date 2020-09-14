@@ -220,7 +220,7 @@
 <script>
 import OrganCard from './organCard'
 import ChairmanCard from './chairmanCard'
-import SwitchImg from '~/components/material/SwitchImg'
+import SwitchImg from '~/components/summary/switchImg'
 export default {
   components: {
     OrganCard,
