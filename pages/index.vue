@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar />
+    <Navbar :path="'Home'" />
     <swiper
       ref="mySwiper"
       :options="swiperOptions"

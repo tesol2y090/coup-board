@@ -1,6 +1,6 @@
 <template>
   <div class="container plastel">
-    <Navbar />
+    <Navbar :path="'Summary'" />
     <Content />
   </div>
 </template>

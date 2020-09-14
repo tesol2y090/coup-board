@@ -9,17 +9,21 @@
       </div>
       <div class="nav-left">
         ลองสำรวจด้วยตนเอง
-        <div class="btn-con">
-          <img :src="explorIcon" class="icon" />
-          Explore
-        </div>
+        <nuxt-link to="/explore" style="text-decoration: none;">
+          <div class="btn-con">
+            <img :src="explorIcon" class="icon" />
+            Explore
+          </div>
+        </nuxt-link>
       </div>
       <div class="nav-right">
         อ่านบทสรุป
-        <div class="btn-con">
-          <img :src="summaryIcon" class="icon" />
-          Summary
-        </div>
+        <nuxt-link to="/summary" style="text-decoration: none;">
+          <div class="btn-con">
+            <img :src="summaryIcon" class="icon" />
+            Summary
+          </div>
+        </nuxt-link>
       </div>
     </div>
   </div>

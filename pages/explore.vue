@@ -1,7 +1,7 @@
 <template>
   <div class="explore-wrap">
     <div class="header">
-      <Navbar />
+      <Navbar :path="'Explore'" />
       <MenuHeader />
       <LabelHeader />
     </div>
@@ -11,17 +11,21 @@
       <div class="nav-container">
         <div class="nav-left">
           ลองสำรวจด้วยตนเอง
-          <div class="btn-con">
-            <img :src="homeIcon" class="icon" />
-            Home
-          </div>
+          <nuxt-link to="/" style="text-decoration: none;">
+            <div class="btn-con">
+              <img :src="homeIcon" class="icon" />
+              Home
+            </div>
+          </nuxt-link>
         </div>
         <div class="nav-right">
           อ่านบทสรุป
-          <div class="btn-con">
-            <img :src="summaryIcon" class="icon" />
-            Summary
-          </div>
+          <nuxt-link to="/summary" style="text-decoration: none;">
+            <div class="btn-con">
+              <img :src="summaryIcon" class="icon" />
+              Summary
+            </div>
+          </nuxt-link>
         </div>
       </div>
     </div>

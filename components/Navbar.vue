@@ -4,15 +4,21 @@
       <img :src="electLogo" alt="" />
     </div>
     <div class="menu">
-      <div class="button">
-        Home
-      </div>
-      <div class="button">
-        Explore
-      </div>
-      <div class="button">
-        Summary
-      </div>
+      <nuxt-link to="/" style="text-decoration: none;">
+        <div :class="path === 'Home' ? 'button-active' : 'button'">
+          Home
+        </div>
+      </nuxt-link>
+      <nuxt-link to="/explore" style="text-decoration: none;">
+        <div :class="path === 'Explore' ? 'button-active' : 'button'">
+          Explore
+        </div>
+      </nuxt-link>
+      <nuxt-link to="/summary" style="text-decoration: none;">
+        <div :class="path === 'Summary' ? 'button-active' : 'button'">
+          Summary
+        </div>
+      </nuxt-link>
     </div>
   </div>
 </template>
@@ -23,7 +29,8 @@ export default {
     return {
       electLogo: require('~/assets/images/Navbar/elect-logo.png')
     }
-  }
+  },
+  props: ['path']
 }
 </script>
 
@@ -50,13 +57,26 @@ export default {
 }
 
 .button {
+  margin-right: 3rem;
+  font-size: 2.4rem;
+  color: #384254;
+  font-weight: bold;
+  cursor: pointer;
+  padding-bottom: 3rem;
+  text-transform: uppercase;
+  &:not(:last-child) {
+    margin-right: 5rem;
+  }
+}
+
+.button-active {
   font-size: 2.4rem;
   color: #384254;
   font-weight: bold;
   cursor: pointer;
   border-bottom: 0.5rem solid #e7384a;
-  padding-bottom: 3rem;
   text-transform: uppercase;
+  margin-right: 3rem;
   &:not(:last-child) {
     margin-right: 5rem;
   }

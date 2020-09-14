@@ -22,11 +22,7 @@
                 <div class="waffle-before" v-for="i in 100" v-bind:key="i" />
               </div>
               <div class="waffle-container" v-if="part === 2">
-                <div
-                  class="waffle-after-left"
-                  v-for="i in 100"
-                  v-bind:key="i"
-                />
+                <div class="waffle-after-left" v-for="i in 100" :key="i" />
               </div>
               <p style="color: #fff">ก่อนรัฐประหาร 2557</p>
               <p style="color: #E7384A">6 ใน 100 คน</p>
@@ -36,11 +32,7 @@
                 <div class="waffle-before" v-for="i in 100" v-bind:key="i" />
               </div>
               <div class="waffle-container" v-if="part === 2">
-                <div
-                  class="waffle-after-right"
-                  v-for="i in 100"
-                  v-bind:key="i"
-                />
+                <div class="waffle-after-right" v-for="i in 100" :key="i" />
               </div>
               <p style="color: #fff">หลังรัฐประหาร 2557</p>
               <p style="color: #E7384A">18 ใน 100 คน</p>
@@ -170,14 +162,6 @@ export default {
   background: #ffffff;
   border-radius: 0.3rem;
   margin: 0.2rem;
-}
-
-.waffle-after-left:nth-child(91) {
-  background: #e7384a;
-}
-
-.waffle-after-right:nth-child(91) {
-  background: #e7384a;
 }
 
 div {

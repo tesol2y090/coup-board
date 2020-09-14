@@ -127,10 +127,7 @@
       <h4 class="top90">
         6. ‘ขนส่ง-สื่อสาร-สถาบันการเงิน’<br />ทหารครองมากที่สุด
       </h4>
-      <div class="switch-img-container">
-        <img :src="chart41" />
-      </div>
-      <SwitchBtn />
+      <SwitchImg />
       <p class="top30 noto-thai">
         ไม่ว่าจะก่อนหรือหลังรัฐประหาร
         ในบรรดาทหารทั้งหมดที่ได้รับการแต่งตั้งให้เป็นกรรมการฯ
@@ -200,17 +197,21 @@
     <div class="nav-container">
       <div class="nav-left">
         กลับหน้าแรก
-        <div class="btn-con">
-          <img :src="homeIcon" class="icon" />
-          Home
-        </div>
+        <nuxt-link to="/" style="text-decoration: none;">
+          <div class="btn-con">
+            <img :src="homeIcon" class="icon" />
+            Home
+          </div>
+        </nuxt-link>
       </div>
       <div class="nav-right">
         ลองสำรวจด้วยตนเอง
-        <div class="btn-con">
-          <img :src="explorIcon" class="icon" />
-          Explore
-        </div>
+        <nuxt-link to="/explore" style="text-decoration: none;">
+          <div class="btn-con">
+            <img :src="explorIcon" class="icon" />
+            Explore
+          </div>
+        </nuxt-link>
       </div>
     </div>
   </div>
@@ -219,20 +220,18 @@
 <script>
 import OrganCard from './organCard'
 import ChairmanCard from './chairmanCard'
-import SwitchBtn from '~/components/material/switchBtn'
+import SwitchImg from '~/components/material/SwitchImg'
 export default {
   components: {
     OrganCard,
     ChairmanCard,
-    SwitchBtn
+    SwitchImg
   },
   data() {
     return {
       chart1: require('~/assets/images/chart-1.png'),
       chart2: require('~/assets/images/chart-2.png'),
       chart3: require('~/assets/images/chart-3.png'),
-      chart41: require('~/assets/images/chart-4-1.png'),
-      chart42: require('~/assets/images/chart-4-2.png'),
       mockChart: require('~/assets/images/mock-chart.png'),
       explorIcon: require('~/assets/images/Component/Button/ic-explore.svg'),
       homeIcon: require('~/assets/images/Component/Button/ic-home.svg'),
@@ -471,10 +470,6 @@ h5 {
   text-align: left;
   margin-left: 3rem;
   width: 40rem;
-}
-
-.switch-img-container {
-  margin: 3rem 0;
 }
 
 .nav-container {
