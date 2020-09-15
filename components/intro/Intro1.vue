@@ -9,8 +9,11 @@
           อ่อนไหวแค่ไหน ต่อรัฐประหาร
         </div>
       </div>
-      <div class="right">
+      <div class="right-desktop">
         <img :src="soliderGroup" class="img-group" />
+      </div>
+      <div class="right-mobile">
+        <img :src="soliderGroupMobile" class="img-group" />
       </div>
     </div>
     <button class="learn-btn">
@@ -29,7 +32,8 @@
 export default {
   data() {
     return {
-      soliderGroup: require('~/assets/images/solider-group.svg')
+      soliderGroup: require('~/assets/images/solider-group.svg'),
+      soliderGroupMobile: require('~/assets/images/group-people-mobile.svg')
     }
   }
 }
@@ -77,6 +81,10 @@ export default {
     width: 42.4rem;
     text-align: center;
   }
+  @media #{$mq-mobile} {
+    font-size: 3.2rem;
+    width: 26.9rem;
+  }
 }
 
 .subtitle {
@@ -91,9 +99,13 @@ export default {
     margin-left: 0;
     text-align: center;
   }
+  @media #{$mq-mobile} {
+    font-size: 3.2rem;
+    width: 24.9rem;
+  }
 }
 
-.right {
+.right-desktop {
   width: 50%;
   height: 100%;
   display: flex;
@@ -101,6 +113,24 @@ export default {
   justify-content: center;
   @media #{$mq-tablet} {
     width: 100%;
+  }
+  @media #{$mq-mobile} {
+    display: none;
+  }
+}
+
+.right-mobile {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  @media #{$mq-tablet} {
+    display: none;
+  }
+  @media #{$mq-mobile} {
+    display: flex;
   }
 }
 

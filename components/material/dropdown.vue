@@ -64,7 +64,6 @@ export default {
   position: absolute;
   padding: 1.4rem 1.2rem 0 1.2rem;
   z-index: 5;
-  // display: none;
   flex-direction: column;
   margin-top: 0.8rem;
   .option-list {
@@ -94,6 +93,9 @@ export default {
   padding: 0 1.2rem;
   fill: #000;
   outline: none;
+  @media #{$mq-tablet} {
+    font-size: 1rem;
+  }
   &:focus {
     background-color: #000;
     color: #fff;

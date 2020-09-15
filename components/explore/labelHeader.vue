@@ -80,12 +80,19 @@ export default {
   padding: 0 8.3rem 0 8.3rem;
   position: relative;
   color: #fff;
+  @media #{$mq-tablet} {
+    padding-left: 1.6rem;
+    padding-right: 1.5rem;
+  }
 }
 
 .title {
   font-size: 2.4rem;
   color: #fff;
   flex: 1;
+  @media #{$mq-mobile} {
+    font-size: 1.2rem;
+  }
 }
 
 .right {
@@ -103,6 +110,10 @@ export default {
   margin-left: 2.5rem;
   &:last-child {
     width: auto;
+  }
+  @media #{$mq-tablet} {
+    width: 3.6rem;
+    margin-left: 1rem;
   }
 }
 

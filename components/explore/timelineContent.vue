@@ -1,7 +1,11 @@
 <template>
   <div>
     <div class="container">
-      <Modal v-if="modal" :data="modalData" />
+      <Modal
+        v-if="modal"
+        :data="modalData"
+        :handleOpenModal="handleOpenModal"
+      />
       <div v-if="showDefault">
         <div
           class="organ-container"
@@ -71,7 +75,7 @@
         <div
           class="organ-row-container"
           v-for="(data, index) in data"
-          v-bind:key="`index + ${data.org_name}`"
+          v-bind:key="`${index} + ${data.org_name}`"
         >
           <div class="left">
             <Organ20Label :cat="data.cat" />
@@ -242,6 +246,13 @@ export default {
   padding: 3.5rem 8.3rem 5.8rem 4.5rem;
   text-align: center;
   position: relative;
+  @media #{$mq-tablet} {
+    padding-left: 1rem;
+    padding-right: 1.5rem;
+  }
+  @media #{$mq-mobile} {
+    padding-right: 0.8rem;
+  }
 }
 
 .organ-container {
@@ -252,6 +263,9 @@ export default {
 .big-label-container {
   display: flex;
   align-items: center;
+  @media #{$mq-tablet} {
+    display: none;
+  }
 }
 
 .content {
@@ -266,6 +280,9 @@ export default {
   width: 1rem;
   border-right: none;
   position: relative;
+  @media #{$mq-tablet} {
+    display: none;
+  }
 }
 
 .dash {
@@ -283,6 +300,10 @@ export default {
   flex: 1;
   align-items: center;
   font-size: 1.6rem;
+  @media #{$mq-mobile} {
+    font-size: 0.8rem;
+    text-align: left;
+  }
 }
 
 .organ-row-container {

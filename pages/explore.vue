@@ -5,6 +5,11 @@
       <MenuHeader />
       <LabelHeader />
     </div>
+    <div class="header-mobile">
+      <Navbar :path="'Explore'" />
+      <LabelHeader />
+      <MenuHeader />
+    </div>
     <div class="content">
       <TitleHeader />
       <TimelineContent />
@@ -63,10 +68,24 @@ export default {
 .header {
   position: fixed;
   z-index: 4;
+  @media #{$mq-mobile} {
+    display: none;
+  }
+}
+.header-mobile {
+  position: fixed;
+  z-index: 4;
+  display: none;
+  @media #{$mq-mobile} {
+    display: inline;
+  }
 }
 .content {
   position: relative;
   top: 202px;
+  @media #{$mq-mobile} {
+    top: 128px;
+  }
 }
 
 .nav-container {

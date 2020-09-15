@@ -1,7 +1,7 @@
 <template>
   <div class="nav-con">
     <div class="logo">
-      <img :src="electLogo" alt="" />
+      <img class="logo" :src="electLogo" alt="" />
     </div>
     <div class="menu">
       <nuxt-link to="/" style="text-decoration: none;">
@@ -19,6 +19,14 @@
           Summary
         </div>
       </nuxt-link>
+    </div>
+    <div class="hamberger-icon">
+      <svg width="40" height="40">
+        <path
+          d="M5 10H35V13.3333H5V10ZM5 18.3333H35V21.6667H5V18.3333ZM5 26.6667H35V30H5V26.6667Z"
+          fill="#E7384A"
+        />
+      </svg>
     </div>
   </div>
 </template>
@@ -46,14 +54,31 @@ export default {
   display: flex;
   justify-content: center;
   position: relative;
+  align-items: center;
+  @media #{$mq-tablet} {
+    padding-right: 0rem;
+  }
+  @media #{$mq-mobile} {
+    height: 5rem;
+    padding: 0.5rem 1.5rem;
+  }
 }
 
 .logo {
   flex: 1;
+  width: 15.5rem;
+  height: 3rem;
+  @media #{$mq-mobile} {
+    width: 10.3rem;
+    height: 2rem;
+  }
 }
 
 .menu {
   display: flex;
+  @media #{$mq-mobile} {
+    display: none;
+  }
 }
 
 .button {
@@ -62,11 +87,7 @@ export default {
   color: #384254;
   font-weight: bold;
   cursor: pointer;
-  padding-bottom: 3rem;
   text-transform: uppercase;
-  &:not(:last-child) {
-    margin-right: 5rem;
-  }
 }
 
 .button-active {
@@ -79,6 +100,13 @@ export default {
   margin-right: 3rem;
   &:not(:last-child) {
     margin-right: 5rem;
+  }
+}
+
+.hamberger-icon {
+  display: none;
+  @media #{$mq-mobile} {
+    display: flex;
   }
 }
 </style>

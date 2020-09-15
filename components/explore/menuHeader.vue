@@ -36,6 +36,13 @@ export default {
   padding: 0 1.2rem 0 6.8rem;
   position: relative;
   color: #fff;
+  @media #{$mq-tablet} {
+    padding-left: 1.6rem;
+    padding-right: 1.1rem;
+  }
+  @media #{$mq-mobile} {
+    flex-direction: column-reverse;
+  }
 }
 
 .left {

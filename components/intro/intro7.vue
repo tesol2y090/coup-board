@@ -70,6 +70,9 @@ export default {
   justify-content: center;
   color: #fff;
   text-align: center;
+  @media #{$mq-tablet} {
+    font-size: 1.6rem;
+  }
 }
 
 .nav-left {
@@ -80,6 +83,9 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media #{$mq-mobile} {
+    font-size: 1.6rem;
+  }
 }
 
 .nav-right {
@@ -89,6 +95,9 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media #{$mq-mobile} {
+    font-size: 1.6rem;
+  }
 }
 
 .btn-con {
@@ -101,6 +110,10 @@ export default {
   margin-top: 2rem;
   display: flex;
   align-items: center;
+  @media #{$mq-mobile} {
+    font-size: 1.6rem;
+    padding: 0.8rem;
+  }
 }
 
 .icon {

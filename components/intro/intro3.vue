@@ -75,12 +75,19 @@ export default {
   margin: 0 auto;
   margin-top: 7.8rem;
   @media #{$mq-tablet} {
-    width: 1024px;
+    width: 100vw;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: 4.8rem;
     padding-top: 9rem;
+    background-color: #f6efeb;
+  }
+  @media #{$mq-mobile} {
+    margin-top: 0;
+    padding: 10rem 2rem;
+    height: calc(100vh - 5rem);
+    margin-top: 5rem;
   }
 }
 .left {
@@ -89,6 +96,13 @@ export default {
   font-size: 2rem;
   display: flex;
   flex-direction: column;
+  @media #{$mq-tablet} {
+    width: 100%;
+  }
+  @media #{$mq-mobile} {
+    font-size: 1.4rem;
+    color: #384254;
+  }
 }
 
 .right {
@@ -105,9 +119,15 @@ export default {
   text-align: center;
   @media #{$mq-tablet} {
     margin-left: 0;
-    margin-top: 10rem;
+    margin-top: 5rem;
     width: 51.6rem;
     height: 41.2rem;
+  }
+  @media #{$mq-mobile} {
+    top: 0;
+    font-size: 1.4rem;
+    color: #384254;
+    display: none;
   }
 }
 
@@ -140,6 +160,7 @@ export default {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin: 0 auto;
   }
 }
 
@@ -151,6 +172,10 @@ export default {
   color: #fff;
   @media #{$mq-tablet} {
     margin-top: 2.5rem;
+  }
+  @media #{$mq-mobile} {
+    font-size: 1.4rem;
+    color: #384254;
   }
 }
 

@@ -32,7 +32,14 @@
                 <div class="waffle-before" v-for="i in 100" v-bind:key="i" />
               </div>
               <div class="waffle-container" v-if="part === 2">
-                <div class="waffle-after-right" v-for="i in 100" :key="i" />
+                <div
+                  :class="{
+                    'waffle-after-right': true,
+                    'animation-waffle-right': current_slide === 7
+                  }"
+                  v-for="i in 100"
+                  :key="i"
+                />
               </div>
               <p style="color: #fff">หลังรัฐประหาร 2557</p>
               <p style="color: #E7384A">18 ใน 100 คน</p>
@@ -55,6 +62,17 @@ export default {
   },
   computed: {
     ...mapState('store', ['current_slide'])
+  },
+  watch: {
+    current_slide() {
+      if (this.current_slide === 7) {
+        const beforeWaffle = document.getElementsByClassName(
+          'waffle-after-right'
+        )
+        console.log(beforeWaffle)
+        beforeWaffle.className = 'animation-waffle'
+      }
+    }
   }
 }
 </script>
@@ -67,8 +85,9 @@ export default {
   align-items: center;
   margin: 0 auto;
   @media #{$mq-tablet} {
-    width: 102.4rem;
+    width: 100vw;
     align-items: flex-start;
+    height: calc(100vh - 5rem);
   }
 }
 
@@ -88,9 +107,9 @@ export default {
   position: relative;
   @media #{$mq-tablet} {
     width: 100%;
-    height: auto;
     display: flex;
     justify-content: center;
+    height: 5rem;
   }
 }
 
@@ -100,10 +119,11 @@ export default {
   position: relative;
   @media #{$mq-tablet} {
     width: 100%;
-    height: auto;
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    position: relative;
+    top: 0;
   }
 }
 
@@ -132,26 +152,34 @@ export default {
   margin-left: 9rem;
   @media #{$mq-tablet} {
     margin-left: 0rem;
-    width: auto;
-    height: auto;
     text-align: center;
+    padding: 0 3.2rem;
   }
 }
 
 .split-container {
   display: flex;
   margin-top: 4.2rem;
+  @media #{$mq-tablet} {
+    justify-content: space-between;
+  }
 }
 
 .splint-right-container {
   margin-left: 8.6rem;
+  @media #{$mq-tablet} {
+    margin-left: 0;
+  }
 }
 
 .waffle-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
   width: 19rem;
   margin-bottom: 3.2rem;
+  @media #{$mq-mobile} {
+    width: 14rem;
+  }
 }
 
 .waffle-before,
@@ -162,6 +190,10 @@ export default {
   background: #ffffff;
   border-radius: 0.3rem;
   margin: 0.2rem;
+  @media #{$mq-mobile} {
+    width: 1rem;
+    height: 1rem;
+  }
 }
 
 div {
@@ -171,11 +203,39 @@ div {
 .title {
   font-weight: 800;
   font-size: 3.6rem;
+  @media #{$mq-mobile} {
+    font-size: 2.4rem;
+  }
 }
 
 .bottom {
   margin-top: 5rem;
   font-size: 2rem;
   font-weight: 500;
+  @media #{$mq-mobile} {
+    display: none;
+  }
+}
+
+p {
+  @media #{$mq-tablet} {
+    font-size: 1.4rem;
+  }
+}
+
+@mixin on-circle($item-count) {
+  @for $i from 1 through $item-count {
+    &:nth-child(#{$i}) {
+      transition-delay: ($i/10) + 0s;
+      background: #e7384a;
+    }
+  }
+}
+
+.animation-waffle-right {
+  @include on-circle($item-count: 18);
+}
+.animation-waffle-left {
+  @include on-circle($item-count: 6);
 }
 </style>

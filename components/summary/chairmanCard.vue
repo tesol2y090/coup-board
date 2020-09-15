@@ -55,6 +55,12 @@ export default {
   align-items: center;
   padding: 1.3rem 0 1rem 2rem;
   margin: 0.5rem 0;
+  @media #{$mq-tablet} {
+    width: 60rem;
+  }
+  @media #{$mq-mobile} {
+    display: none;
+  }
 }
 
 .date-container {
@@ -65,23 +71,33 @@ export default {
   text-align: left;
   display: flex;
   font-size: 1.4rem;
+  @media #{$mq-tablet} {
+    font-size: 0.8rem;
+  }
 }
 
 .date {
   margin: 0;
   padding: 0;
-  margin-left: 0.8rem;
+  margin-left: 0.4rem;
 }
 
 .name-container {
   display: flex;
   align-items: center;
+  @media #{$mq-tablet} {
+    max-width: 20rem;
+  }
 }
 
 .img-name {
   width: 5rem;
   height: 4.8rem;
   margin: 0 1.3rem 0 2.2rem;
+  @media #{$mq-tablet} {
+    width: 4rem;
+    height: 3.8rem;
+  }
 }
 
 .text-name {
@@ -89,10 +105,23 @@ export default {
   color: #384254;
   width: 21rem;
   text-align: left;
+  @media #{$mq-tablet} {
+    font-size: 1.2rem;
+  }
 }
 
 .detail {
   text-align: left;
   max-width: 20.8rem;
+  @media #{$mq-tablet} {
+    width: 18.2rem;
+    margin-left: 0.8rem;
+  }
+}
+
+.hint {
+  @media #{$mq-tablet} {
+    font-size: 0.8rem;
+  }
 }
 </style>

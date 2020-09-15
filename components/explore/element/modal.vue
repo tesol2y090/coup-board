@@ -1,5 +1,13 @@
 <template>
   <div class="modal" :style="`top: ${data.top}px`">
+    <div class="close-container" @click="handleOpenModal">
+      <svg width="31" height="31">
+        <path
+          d="M23.9809 4.36719H6.64715C5.9904 4.36719 5.36056 4.62882 4.89617 5.09454C4.43179 5.56025 4.1709 6.1919 4.1709 6.85052V24.2339C4.1709 24.8925 4.43179 25.5241 4.89617 25.9898C5.36056 26.4556 5.9904 26.7172 6.64715 26.7172H23.9809C24.6376 26.7172 25.2675 26.4556 25.7318 25.9898C26.1962 25.5241 26.4571 24.8925 26.4571 24.2339V6.85052C26.4571 6.1919 26.1962 5.56025 25.7318 5.09454C25.2675 4.62882 24.6376 4.36719 23.9809 4.36719ZM23.9809 24.2339H6.64715V6.85052H23.9809V24.2339ZM21.5046 11.0722L17.0474 15.5422L21.5046 20.0122L19.7713 21.7505L15.314 17.2805L10.8568 21.7505L9.12339 20.0122L13.5806 15.5422L9.12339 11.0722L10.8568 9.33385L15.314 13.8039L19.7713 9.33385L21.5046 11.0722Z"
+          fill="#E7384A"
+        />
+      </svg>
+    </div>
     <div class="left">
       <img :src="data.logo" />
       <div class="sub-hint noto-thai">ชื่อหน่วยงาน</div>
@@ -92,7 +100,8 @@ export default {
   components: {
     Organ20Label
   },
-  props: ['data']
+  props: ['data', 'handleOpenModal'],
+  methods: {}
 }
 </script>
 
@@ -108,6 +117,11 @@ export default {
   left: 50%;
   transform: translateX(-50%);
   display: flex;
+  @media #{$mq-mobile} {
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+  }
 }
 
 .flex-row {
@@ -127,6 +141,9 @@ export default {
 .value {
   font-size: 1.6rem;
   line-height: 120%;
+  @media #{$mq-tablet} {
+    font-size: 1.4rem;
+  }
 }
 
 .top16 {
@@ -155,6 +172,14 @@ export default {
   }
   .organ-name {
     font-size: 1.8rem;
+    @media #{$mq-tablet} {
+      font-size: 1.4rem;
+      text-align: left;
+    }
+  }
+  @media #{$mq-mobile} {
+    width: 100%;
+    padding-bottom: 2rem;
   }
 }
 
@@ -162,6 +187,12 @@ export default {
   width: 33.33%;
   padding: 2.3rem 5.5rem 0 3.5rem;
   text-align: left;
+  @media #{$mq-tablet} {
+    padding: 1.5rem 1.5rem 0 2.1rem;
+  }
+  @media #{$mq-mobile} {
+    width: 100%;
+  }
   .waffle-container {
     display: flex;
     flex-wrap: wrap;
@@ -191,6 +222,13 @@ export default {
   padding-right: 6.7rem;
   border-left: 1px solid #d8d8d8;
   text-align: left;
+  @media #{$mq-tablet} {
+    padding-top: 0.4rem;
+    padding-left: 1.5rem;
+  }
+  @media #{$mq-mobile} {
+    width: 100%;
+  }
 }
 .bar-container {
   width: 23.2rem;
@@ -210,5 +248,12 @@ export default {
   background: #e7384a;
   border-radius: 0.4rem;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.06);
+}
+
+.close-container {
+  cursor: pointer;
+  position: absolute;
+  right: 1.6rem;
+  top: 0.4rem;
 }
 </style>

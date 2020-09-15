@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h5>Summary</h5>
+    <h5>Explore</h5>
     <h2>สำรวจทหารในกรรมการรัฐวิสาหกิจ</h2>
     <h5>กดเพื่อดูเหตุการณ์</h5>
   </div>
@@ -15,6 +15,22 @@ export default {}
   padding-top: 6.3rem;
   background-color: #384254;
   text-align: center;
+  @media #{$mq-mobile} {
+    height: 18.6rem;
+    padding: 6.3rem 2.6rem 0 2.6rem;
+  }
+}
+
+h5 {
+  @media #{$mq-mobile} {
+    font-size: 1.4rem;
+  }
+}
+
+h2 {
+  @media #{$mq-mobile} {
+    font-size: 2.4rem;
+  }
 }
 
 h2,

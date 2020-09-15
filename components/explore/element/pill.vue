@@ -57,6 +57,9 @@ export default {
   .percent-text {
     font-size: 1.2rem;
     display: none;
+    @media #{$mq-tablet} {
+      font-size: 0.8rem;
+    }
   }
   &:hover {
     border: 1px solid #000000;
@@ -64,10 +67,15 @@ export default {
       display: inline;
     }
   }
-}
-
-.percent-text {
-  display: none;
+  @media #{$mq-tablet} {
+    width: 3.6rem;
+    margin-left: 1rem;
+  }
+  @media #{$mq-mobile} {
+    width: 2rem;
+    border-radius: 50%;
+    margin-left: 0.4rem;
+  }
 }
 
 .no-data {
@@ -81,6 +89,11 @@ export default {
   pointer-events: none;
   &:last-child {
     margin-left: 0;
+  }
+  @media #{$mq-mobile} {
+    width: 2rem;
+    border-radius: 50%;
+    margin-left: 0.4rem;
   }
 }
 </style>

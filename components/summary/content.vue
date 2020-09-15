@@ -25,7 +25,7 @@
       </h4>
       <div class="split-container top30">
         <div class="left">
-          <img :src="chart1" />
+          <img class="img-show" :src="chart1" />
         </div>
         <div class="right">
           <p>
@@ -41,7 +41,7 @@
       </h4>
       <div class="split-container top30">
         <div class="left">
-          <img :src="chart2" />
+          <img class="img-show" :src="chart2" />
         </div>
         <div class="right">
           <p class="noto-thai">
@@ -76,6 +76,9 @@
           v-bind:key="data.name"
           :dataCard="data"
         />
+        <div class="img-mobile">
+          <img :src="imgMobile" />
+        </div>
       </div>
       <p class="noto-thai top30">
         ที่น่าสนใจนั่นคือ ทุกรัฐวิสาหกิจที่ติดอันดับ
@@ -100,6 +103,9 @@
           v-bind:key="index"
           :dataCard="data"
         />
+        <div class="img-mobile">
+          <img :src="imgChairMobile" />
+        </div>
       </div>
       <h3 class="top50">
         และเมื่อถอยออกมาดูภาพรวม<br />ของรัฐประหารแต่ละครั้ง..
@@ -112,7 +118,7 @@
       <h4>5. หลังรัฐประหารเกือบทุกครั้ง<br />มีสัดส่วนทหารเพิ่มขึ้น</h4>
       <div class="split-container top30">
         <div class="left">
-          <img :src="chart3" />
+          <img class="img-show" :src="chart3" />
         </div>
         <div class="right">
           <div class="hint noto-thai">
@@ -232,6 +238,8 @@ export default {
       chart1: require('~/assets/images/chart-1.png'),
       chart2: require('~/assets/images/chart-2.png'),
       chart3: require('~/assets/images/chart-3.png'),
+      imgMobile: require('~/assets/images/chart-2-mobile.png'),
+      imgChairMobile: require('~/assets/images/chart-3-mobile.png'),
       mockChart: require('~/assets/images/mock-chart.png'),
       explorIcon: require('~/assets/images/Component/Button/ic-explore.svg'),
       homeIcon: require('~/assets/images/Component/Button/ic-home.svg'),
@@ -405,6 +413,16 @@ export default {
   margin: 0 auto;
   text-align: center;
   padding: 3.8rem 23rem 12rem;
+  @media #{$mq-tablet} {
+    padding: 1.5rem 1.8rem 5.3rem;
+  }
+}
+
+.img-mobile {
+  display: none;
+  @media #{$mq-mobile} {
+    display: inline;
+  }
 }
 
 .flex-column {
@@ -418,10 +436,16 @@ export default {
 
 .top30 {
   margin-top: 3rem;
+  @media #{$mq-tablet} {
+    margin-top: 2.5rem;
+  }
 }
 
 .top90 {
   margin-top: 9rem;
+  @media #{$mq-tablet} {
+    margin-top: 5rem;
+  }
 }
 
 .left30 {
@@ -466,10 +490,19 @@ h5 {
   }
 }
 
+p {
+  @media #{$mq-tablet} {
+    font-size: 1.4rem;
+  }
+}
+
 .right {
   text-align: left;
   margin-left: 3rem;
   width: 40rem;
+  @media #{$mq-tablet} {
+    text-align: center;
+  }
 }
 
 .nav-container {
@@ -488,6 +521,9 @@ h5 {
   align-items: center;
   justify-content: center;
   font-size: 3rem;
+  @media #{$mq-mobile} {
+    font-size: 1.6rem;
+  }
 }
 
 .nav-right {
@@ -500,6 +536,9 @@ h5 {
   align-items: center;
   justify-content: center;
   font-size: 3rem;
+  @media #{$mq-mobile} {
+    font-size: 1.6rem;
+  }
 }
 
 .btn-con {
@@ -512,6 +551,10 @@ h5 {
   margin-top: 2rem;
   display: flex;
   align-items: center;
+  @media #{$mq-mobile} {
+    font-size: 1.6rem;
+    padding: 0.8rem;
+  }
 }
 
 .icon {
@@ -522,5 +565,14 @@ h5 {
   width: 820px;
   margin: 3rem 0;
   position: relative;
+  @media #{$mq-tablet} {
+    width: 60rem;
+  }
+}
+
+.img-show {
+  @media #{$mq-mobile} {
+    width: 28rem;
+  }
 }
 </style>

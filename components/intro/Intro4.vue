@@ -44,14 +44,14 @@
             <div class="waffle-after" v-for="i in 450" v-bind:key="i" />
           </div>
           <div v-if="part === 1" class="waffle-label">
-            <div style="flex: 1">
+            <div class="waffle-label-left">
               <h3 style="color: #FFF">30 คน</h3>
               <p style="color: #fff">จาก 441 คน</p>
             </div>
             <h3 style="color: #fff">6.80 %</h3>
           </div>
           <div v-if="part === 2" class="waffle-label">
-            <div style="flex: 1">
+            <div>
               <h3 style="color: #FFF">76 คน</h3>
               <p style="color: #fff">จาก 417 คน</p>
             </div>
@@ -111,7 +111,11 @@ export default {
   align-items: center;
   margin: 0 auto;
   @media #{$mq-tablet} {
-    width: 102.4rem;
+    width: 100vw;
+  }
+  @media #{$mq-mobile} {
+    margin-top: 0;
+    height: calc(100vh - 5rem);
   }
 }
 
@@ -145,6 +149,9 @@ export default {
   @media #{$mq-tablet} {
     width: 100%;
   }
+  @media #{$mq-mobile} {
+    text-align: center;
+  }
 }
 
 .left-part2-bg {
@@ -170,12 +177,18 @@ export default {
   @media #{$mq-tablet} {
     width: 100%;
     text-align: center;
-    height: auto;
+    height: 30rem;
+  }
+  @media #{$mq-mobile} {
+    height: 15rem;
   }
 }
 
 .left-container-content {
   margin-top: 4rem;
+  @media #{$mq-mobile} {
+    display: none;
+  }
 }
 
 .right-container {
@@ -191,7 +204,8 @@ export default {
     flex-direction: column;
     align-items: center;
     margin-left: 0;
-    top: 24rem;
+    position: relative;
+    top: 0;
   }
 }
 
@@ -200,6 +214,9 @@ export default {
   display: flex;
   flex-wrap: wrap;
   width: 45.6rem;
+  @media #{$mq-mobile} {
+    width: 28rem;
+  }
 }
 
 .waffle-before {
@@ -208,6 +225,10 @@ export default {
   background: #ffffff;
   border-radius: 0.3rem;
   margin: 0.2rem;
+  @media #{$mq-mobile} {
+    width: 0.89rem;
+    height: 0.89rem;
+  }
 }
 
 .waffle-before:nth-last-child(-n + 30) {
@@ -220,6 +241,10 @@ export default {
   background: #ffffff;
   border-radius: 0.3rem;
   margin: 0.2rem;
+  @media #{$mq-mobile} {
+    width: 0.89rem;
+    height: 0.89rem;
+  }
 }
 
 .waffle-after:nth-last-child(-n + 76) {
@@ -230,12 +255,23 @@ export default {
   display: flex;
   margin-top: 3.2rem;
   width: 45.6rem;
+  justify-content: space-between;
+  @media #{$mq-mobile} {
+    width: 100%;
+    padding: 0 2rem;
+  }
 }
 
 h3,
 p {
   @media #{$mq-tablet} {
     color: #fff;
+  }
+}
+
+h3 {
+  @media #{$mq-mobile} {
+    font-size: 2.4rem;
   }
 }
 

@@ -73,4 +73,13 @@ export default {
   border-radius: 10px;
   justify-content: center;
 }
+
+img {
+  @media #{$mq-tablet} {
+    width: 60rem;
+  }
+  @media #{$mq-mobile} {
+    width: 28rem;
+  }
+}
 </style>

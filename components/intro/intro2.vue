@@ -11,7 +11,7 @@
       </div>
       <div id="middle" class="middle">
         <div class="title">ปฏิรูปรัฐวิสาหกิจ</div>
-        <pravutFace />
+        <img :src="pravuthFaceImg" />
       </div>
       <div v-if="part === 2" class="box" style="font-size: 2rem;">
         ความน่าสนใจอยู่ที่ว่าการเปลี่ยนแปลง/แต่งตั้งกรรมการรัฐวิสาหกิจบาง
@@ -35,6 +35,11 @@ export default {
       default: 0
     }
   },
+  data() {
+    return {
+      pravuthFaceImg: require('~/assets/images/prayuth-intro.svg')
+    }
+  },
   components: {
     pravutFace
   },
@@ -54,10 +59,16 @@ export default {
 <style lang="scss" scoped>
 .container {
   height: calc(100vh - 8rem);
-  width: 1280;
+  width: 100%;
   display: flex;
   align-items: center;
   margin: 0 auto;
+  @media #{$mq-mobile} {
+    height: calc(100vh - 5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .middle {
@@ -66,6 +77,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  @media #{$mq-mobile} {
+  }
 }
 
 .content-con {
@@ -76,6 +89,9 @@ export default {
   width: 100%;
   color: #fff;
   font-size: 2.4rem;
+  @media #{$mq-mobile} {
+    padding: 0;
+  }
 }
 
 .title {
@@ -87,6 +103,10 @@ export default {
   position: absolute;
   top: 0;
   width: 32.2rem;
+  @media #{$mq-mobile} {
+    color: #e7384a;
+    top: -10rem;
+  }
 }
 
 .box {
