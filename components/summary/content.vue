@@ -28,7 +28,7 @@
           <img class="img-show" :src="chart1" />
         </div>
         <div class="right">
-          <p>
+          <p class="noto-thai">
             หลังรัฐประหาร 2557 มีสัดส่วนทหารที่เป็น
             กรรมการรัฐวิสาหกิจเพิ่มขึ้นสูงที่สุดนับตั้งแต่หลังรัฐประหาร 2494
             ซึ่งยุค 2490 นั้น เป็นช่วงเวลาที่
@@ -77,7 +77,7 @@
           :dataCard="data"
         />
         <div class="img-mobile">
-          <img :src="imgMobile" />
+          <img style="width: 280px" :src="organCardImg" />
         </div>
       </div>
       <p class="noto-thai top30">
@@ -104,7 +104,7 @@
           :dataCard="data"
         />
         <div class="img-mobile">
-          <img :src="imgChairMobile" />
+          <img style="width: 280px" :scr="chairmanCardImg" />
         </div>
       </div>
       <h3 class="top50">
@@ -121,13 +121,13 @@
           <img class="img-show" :src="chart3" />
         </div>
         <div class="right">
-          <div class="hint noto-thai">
-            9 ใน 11 ครั้งของรัฐประหารทั้งหมด
+          <p class="noto-thai">
+            8 ใน 11 ครั้งของรัฐประหารทั้งหมด
             มีสัดส่วนทหารที่เป็นกรรมการรัฐวิสาหกิจ
             เพิ่มขึ้นทุกครั้งหลังจากรัฐประหาร มีเพียง 2 ครั้งเท่านั้น
             ที่สัดส่วนทหารในบอร์ดกรรมการฯ ลดลงหลังรัฐประหาร ได้แก่ รัฐประหารปี
             2514 และ 2519
-          </div>
+          </p>
         </div>
       </div>
       <h4 class="top90">
@@ -235,12 +235,11 @@ export default {
   },
   data() {
     return {
-      chart1: require('~/assets/images/chart-1.png'),
-      chart2: require('~/assets/images/chart-2.png'),
-      chart3: require('~/assets/images/chart-3.png'),
-      imgMobile: require('~/assets/images/chart-2-mobile.png'),
-      imgChairMobile: require('~/assets/images/chart-3-mobile.png'),
-      mockChart: require('~/assets/images/mock-chart.png'),
+      chart1: require('~/assets/images/chart-1.svg'),
+      chart2: require('~/assets/images/chart-2.svg'),
+      chart3: require('~/assets/images/chart-3.svg'),
+      organCardImg: require('~/assets/images/organ-card.svg'),
+      chairmanCardImg: require('~/assets/images/chair-man-card.svg'),
       explorIcon: require('~/assets/images/Component/Button/ic-explore.svg'),
       homeIcon: require('~/assets/images/Component/Button/ic-home.svg'),
       chairmanCardData: [
@@ -248,73 +247,85 @@ export default {
           date: '1 กรกฎาคม 2557',
           name: 'พลเอก วิลาศ อรุณศรี',
           organName: 'การยาสูบแห่งประเทศไทย',
-          profile: require('~/assets/images/profile-summary/wilas.png')
+          profile: require('~/assets/images/profile-summary/wilas.png'),
+          workDate: '78'
         },
         {
           date: '1 กรกฎาคม 2557',
           name: 'พลเรือเอก อภิวัฒน์ ศรีวรรธนะ',
           organName: 'การท่าเรือแห่งประเทศไทย',
-          profile: require('~/assets/images/profile-summary/apiwat.png')
+          profile: require('~/assets/images/profile-summary/apiwat.png'),
+          workDate: '1,095'
         },
         {
           date: '8 กรกฎาคม 2557',
           name: 'พลอากาศเอก สฤษดิ์พงษ์ โกมุทานนท์',
           organName: 'สถาบันการบินพลเรือน',
-          profile: require('~/assets/images/profile-summary/salitpong.png')
+          profile: require('~/assets/images/profile-summary/salitpong.png'),
+          workDate: '1,462'
         },
         {
           date: '21 กรกฎาคม 2557',
           name: 'พลเอก ปัฐมพงศ์ ประถมภัฏ',
           organName: 'การทางพิเศษแห่งประเทศไทย',
-          profile: require('~/assets/images/profile-summary/patthamapong.png')
+          profile: require('~/assets/images/profile-summary/patthamapong.png'),
+          workDate: '51'
         },
         {
           date: '21 กรกฎาคม 2557',
           name: 'พลเอก ยอดยุทธ บุญญาธิการ',
           organName: 'การรถไฟฟ้าขนส่งมวลชนแห่ง ประเทศไทย',
-          profile: require('~/assets/images/profile-summary/yodyuth.png')
+          profile: require('~/assets/images/profile-summary/yodyuth.png'),
+          workDate: '1,199'
         },
         {
           date: '22 กรกฎาคม 2557',
           name: 'พลเอก ภัทรินทร์ ลีลายุทธ',
           organName: 'องค์การสวนสัตว์',
-          profile: require('~/assets/images/profile-summary/pattharin.png')
+          profile: require('~/assets/images/profile-summary/pattharin.png'),
+          workDate: '873'
         },
         {
           date: '24 กรกฎาคม 2557',
           name: 'พลเอก จีระศักดิ์ ชมประสพ',
           organName: 'องค์การจัดการน้ำเสีย',
-          profile: require('~/assets/images/profile-summary/jeerasak.png')
+          profile: require('~/assets/images/profile-summary/jeerasak.png'),
+          workDate: '68'
         },
         {
           date: '29 กรกฎาคม 2557',
           name: 'พลโท สุรเชษฐ์ ชัยวงศ์',
           organName: 'องค์การคลังสินค้า',
-          profile: require('~/assets/images/profile-summary/surachate.png')
+          profile: require('~/assets/images/profile-summary/surachate.png'),
+          workDate: '36'
         },
         {
           date: '6 สิงหาคม 2557',
           name: 'พลเอก สุรพงษ์ สุวรรณอัตถ์',
           organName: 'บริษัท ทีโอที จำกัด (มหาชน)',
-          profile: require('~/assets/images/profile-summary/surapong.png')
+          profile: require('~/assets/images/profile-summary/surapong.png'),
+          workDate: '1,735'
         },
         {
           date: '19 สิงหาคม 2557',
           name: 'พลโท ศุภกร สงวนชาติศรไกร',
           organName: 'องค์การเภสัชกรรม',
-          profile: require('~/assets/images/profile-summary/supakorn.png')
+          profile: require('~/assets/images/profile-summary/supakorn.png'),
+          workDate: '1,095'
         },
         {
           date: '25 สิงหาคม 2557',
           name: 'พลโท สาธิต พิธรัตน์',
           organName: 'บริษัท ไปรษณีย์ไทย จำกัด',
-          profile: require('~/assets/images/profile-summary/satit.png')
+          profile: require('~/assets/images/profile-summary/satit.png'),
+          workDate: '1,360'
         },
         {
           date: '17 มีนาคม 2558',
           name: 'พลเอก พิรุณ แผ้วพลสง',
           organName: 'การไฟฟ้านครหลวง',
-          profile: require('~/assets/images/profile-summary/pirun.png')
+          profile: require('~/assets/images/profile-summary/pirun.png'),
+          workDate: '207'
         }
       ],
       organCardData: [
@@ -502,6 +513,7 @@ p {
   width: 40rem;
   @media #{$mq-tablet} {
     text-align: center;
+    width: 28rem;
   }
 }
 
@@ -566,7 +578,10 @@ p {
   margin: 3rem 0;
   position: relative;
   @media #{$mq-tablet} {
-    width: 60rem;
+    width: 600px;
+  }
+  @media #{$mq-mobile} {
+    width: 28rem;
   }
 }
 

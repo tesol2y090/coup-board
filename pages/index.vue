@@ -7,7 +7,7 @@
       @slideChange="changeSwiperIndex()"
     >
       <swiper-slide class="dark-blue">
-        <intro1 />
+        <intro1 :handleGotoSlide="handleGotoSlide" />
       </swiper-slide>
       <swiper-slide> </swiper-slide>
       <swiper-slide> </swiper-slide>
@@ -100,6 +100,9 @@ export default {
       this.current_slide = this.$refs.mySwiper.$swiper.activeIndex
       this.$store.dispatch('store/setCurrentSlide', this.current_slide)
       return this.current_slide
+    },
+    handleGotoSlide(page) {
+      this.$refs.mySwiper.$swiper.slideTo(1, 1000)
     }
   }
 }

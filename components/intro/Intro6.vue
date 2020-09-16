@@ -18,28 +18,32 @@
           <p style="color: #fff">ทหารหรืออดีตทหารเป็นกรรมการรัฐวิสาหกิจ</p>
           <div class="split-container">
             <div class="splint-left-container">
-              <div class="waffle-container" v-if="part === 1">
+              <!-- <div class="waffle-container" v-if="part === 1">
                 <div class="waffle-before" v-for="i in 100" v-bind:key="i" />
-              </div>
-              <div class="waffle-container" v-if="part === 2">
+              </div> -->
+              <div
+                :class="{
+                  'waffle-container': true,
+                  'animation-waffle-left': onSlide7
+                }"
+                id="waffle-container-left"
+              >
                 <div class="waffle-after-left" v-for="i in 100" :key="i" />
               </div>
               <p style="color: #fff">ก่อนรัฐประหาร 2557</p>
               <p style="color: #E7384A">6 ใน 100 คน</p>
             </div>
             <div class="splint-right-container">
-              <div class="waffle-container" v-if="part === 1">
+              <!-- <div class="waffle-container" v-show="part === 1">
                 <div class="waffle-before" v-for="i in 100" v-bind:key="i" />
-              </div>
-              <div class="waffle-container" v-if="part === 2">
-                <div
-                  :class="{
-                    'waffle-after-right': true,
-                    'animation-waffle-right': current_slide === 7
-                  }"
-                  v-for="i in 100"
-                  :key="i"
-                />
+              </div> -->
+              <div
+                :class="{
+                  'waffle-container': true,
+                  'animation-waffle-right': onSlide7
+                }"
+              >
+                <div class="waffle-after-right" v-for="i in 100" :key="i" />
               </div>
               <p style="color: #fff">หลังรัฐประหาร 2557</p>
               <p style="color: #E7384A">18 ใน 100 คน</p>
@@ -54,6 +58,11 @@
 <script>
 import { mapState } from 'vuex'
 export default {
+  data() {
+    return {
+      onSlide7: false
+    }
+  },
   props: {
     part: {
       type: Number,
@@ -66,11 +75,9 @@ export default {
   watch: {
     current_slide() {
       if (this.current_slide === 7) {
-        const beforeWaffle = document.getElementsByClassName(
-          'waffle-after-right'
-        )
-        console.log(beforeWaffle)
-        beforeWaffle.className = 'animation-waffle'
+        setTimeout(() => {
+          this.onSlide7 = true
+        }, 100)
       }
     }
   }
@@ -187,7 +194,7 @@ export default {
 .waffle-after-right {
   width: 1.5rem;
   height: 1.5rem;
-  background: #ffffff;
+  background: #fff;
   border-radius: 0.3rem;
   margin: 0.2rem;
   @media #{$mq-mobile} {
@@ -225,7 +232,7 @@ p {
 
 @mixin on-circle($item-count) {
   @for $i from 1 through $item-count {
-    &:nth-child(#{$i}) {
+    > *:nth-child(#{$i}) {
       transition-delay: ($i/10) + 0s;
       background: #e7384a;
     }

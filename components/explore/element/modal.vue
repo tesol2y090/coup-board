@@ -69,9 +69,10 @@
       <h3 v-if="data.percentChange > 0" class="font-red">
         + {{ data.percentChange }} %
       </h3>
-      <h3 v-if="data.percentChange < 0" class="font-light-blue">
+      <h3 v-else-if="data.percentChange < 0" class="font-light-blue">
         {{ data.percentChange }} %
       </h3>
+      <h3 v-else>{{ data.percentChange }} %</h3>
       <div class="bar-contanier">
         <div class="bar-container-label">
           <div class="hint noto-thai" style="flex: 1">ก่อน</div>

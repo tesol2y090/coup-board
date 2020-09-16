@@ -27,9 +27,7 @@
       <div class="hint noto-thai">
         ระยะเวลาดำรงตำแหน่ง
       </div>
-      <div class="hint font-red">
-        373 วัน
-      </div>
+      <div class="hint font-red">{{ dataCard.workDate }} วัน</div>
     </div>
   </div>
 </template>

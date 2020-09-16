@@ -9,8 +9,16 @@
         ถือเป็นนโยบายหนึ่งของ การปฏิรูปรัฐวิสาหกิจ ภายใต้การนำของ พลเอกประยุทธ์
         จันทร์โอชา
       </div>
-      <div id="middle" class="middle">
-        <div class="title">ปฏิรูปรัฐวิสาหกิจ</div>
+      <div
+        id="middle"
+        :class="{ middle: true, 'middle-animation': onSlidePlay }"
+      >
+        <div class="title">
+          ปฏิรูปรัฐวิสาหกิจ
+          <svg class="triangle-container" width="26px" height="26px">
+            <polygon points="0,0 13,26 26,0" fill="white" />
+          </svg>
+        </div>
         <img :src="pravuthFaceImg" />
       </div>
       <div v-if="part === 2" class="box" style="font-size: 2rem;">
@@ -37,7 +45,8 @@ export default {
   },
   data() {
     return {
-      pravuthFaceImg: require('~/assets/images/prayuth-intro.svg')
+      pravuthFaceImg: require('~/assets/images/prayuth-intro.svg'),
+      onSlidePlay: false
     }
   },
   components: {
@@ -49,7 +58,7 @@ export default {
   watch: {
     current_slide() {
       if (this.current_slide === 2) {
-        const middleCon = document.getElementById('middle')
+        this.onSlidePlay = true
       }
     }
   }
@@ -101,7 +110,7 @@ export default {
   border-radius: 1rem;
   text-align: center;
   position: absolute;
-  top: 0;
+  top: -5.5rem;
   width: 32.2rem;
   @media #{$mq-mobile} {
     color: #e7384a;
@@ -126,6 +135,29 @@ export default {
   100% {
     opacity: 1;
   }
+}
+
+.middle-animation {
+  animation: move ease 0.3s;
+  transform: translateY(3rem);
+  > .title {
+    color: #e7384a;
+  }
+  @keyframes move {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(2rem);
+    }
+  }
+}
+
+.triangle-container {
+  position: absolute;
+  bottom: -26px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .text-red {

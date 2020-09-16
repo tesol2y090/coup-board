@@ -2,13 +2,13 @@
   <div class="explore-wrap">
     <div class="header">
       <Navbar :path="'Explore'" />
-      <MenuHeader />
+      <MenuHeader :handleModalInfo="handleModalInfo" />
       <LabelHeader />
     </div>
     <div class="header-mobile">
       <Navbar :path="'Explore'" />
       <LabelHeader />
-      <MenuHeader />
+      <MenuHeader :handleModalInfo="handleModalInfo" />
     </div>
     <div class="content">
       <TitleHeader />
@@ -34,6 +34,7 @@
         </div>
       </div>
     </div>
+    <ModalInfo v-if="modalInfo" :handleModalInfo="handleModalInfo" />
   </div>
 </template>
 
@@ -43,18 +44,26 @@ import MenuHeader from '~/components/explore/menuHeader'
 import LabelHeader from '~/components/explore/labelHeader'
 import TitleHeader from '~/components/explore/titleHeader'
 import TimelineContent from '~/components/explore/timelineContent'
+import ModalInfo from '~/components/modalInfo'
 
 export default {
   components: {
     Navbar,
     MenuHeader,
     LabelHeader,
-    TimelineContent
+    TimelineContent,
+    ModalInfo
   },
   data() {
     return {
       summaryIcon: require('~/assets/images/Component/Button/ic-summary.svg'),
-      homeIcon: require('~/assets/images/Component/Button/ic-home.svg')
+      homeIcon: require('~/assets/images/Component/Button/ic-home.svg'),
+      modalInfo: false
+    }
+  },
+  methods: {
+    handleModalInfo() {
+      this.modalInfo = !this.modalInfo
     }
   }
 }

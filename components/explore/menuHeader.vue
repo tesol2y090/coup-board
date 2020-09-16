@@ -5,7 +5,7 @@
       <RatioBtn />
     </div>
     <div class="right">
-      <Label />
+      <Label :handleModalInfo="handleModalInfo" />
     </div>
   </div>
 </template>
@@ -22,7 +22,8 @@ export default {
   },
   data() {
     return {}
-  }
+  },
+  props: ['handleModalInfo']
 }
 </script>
 

@@ -16,7 +16,7 @@
         <img :src="soliderGroupMobile" class="img-group" />
       </div>
     </div>
-    <button class="learn-btn">
+    <button class="learn-btn" @click="handleGotoSlide">
       Learn More
       <svg width="24" height="24" style="margin-left: 1.2rem">
         <path
@@ -30,6 +30,7 @@
 
 <script>
 export default {
+  props: ['handleGotoSlide'],
   data() {
     return {
       soliderGroup: require('~/assets/images/solider-group.svg'),
@@ -142,6 +143,7 @@ export default {
 }
 
 .learn-btn {
+  outline: none;
   width: 17.6rem;
   height: 5.2rem;
   border-radius: 1rem;

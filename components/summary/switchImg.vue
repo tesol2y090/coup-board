@@ -24,8 +24,8 @@ export default {
   data() {
     return {
       selectedImg: 'left',
-      chart41: require('~/assets/images/chart-4-1.png'),
-      chart42: require('~/assets/images/chart-4-2.png')
+      chart41: require('~/assets/images/chart-4-1.svg'),
+      chart42: require('~/assets/images/chart-4-2.svg')
     }
   },
   methods: {
@@ -75,6 +75,7 @@ export default {
 }
 
 img {
+  width: 73.3rem;
   @media #{$mq-tablet} {
     width: 60rem;
   }
