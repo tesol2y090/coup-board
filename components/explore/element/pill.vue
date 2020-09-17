@@ -5,8 +5,10 @@
     class="pill-container noto-thai"
     :style="`${styleBgPill(percent)}`"
   >
-    <span class="percent-text noto-thai" :style="`${styleFont(this.percent)}`">
-      {{ this.percent }}</span
+    <span class="percent-text">
+      <strong class="noto-thai" :style="`${styleFont(this.percent)}`">{{
+        this.percent
+      }}</strong></span
     >
   </div>
 </template>
@@ -60,6 +62,9 @@ export default {
     @media #{$mq-tablet} {
       font-size: 0.8rem;
     }
+    @media #{$mq-mobile} {
+      font-size: 5px;
+    }
   }
   &:hover {
     border: 1px solid #000000;
@@ -89,6 +94,10 @@ export default {
   pointer-events: none;
   &:last-child {
     margin-left: 0;
+  }
+  @media #{$mq-tablet} {
+    width: 3.6rem;
+    margin-left: 1rem;
   }
   @media #{$mq-mobile} {
     width: 2rem;

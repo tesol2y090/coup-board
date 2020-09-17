@@ -1,11 +1,6 @@
 <template>
   <div>
     <div class="container">
-      <Modal
-        v-if="modal"
-        :data="modalData"
-        :handleOpenModal="handleOpenModal"
-      />
       <div v-if="showDefault">
         <div
           class="organ-container"
@@ -140,6 +135,7 @@ export default {
     Pill,
     Modal
   },
+  props: ['setModalDetailData', 'handleModalDetail'],
   data() {
     return {
       data,
@@ -186,9 +182,9 @@ export default {
   },
   methods: {
     handleShowModal(name, id) {
-      this.handleOpenModal()
+      this.handleModalDetail()
       const coupYear = id == '90' ? '2490' : `25${id}`
-      const top = event.pageY - 476
+      const top = event.pageY + 30
       const currentOrgan = this.data.find((organ) => organ.org_name === name)
       const { org_name: orgName, y: year, logo, cat, minis } = currentOrgan
       const b4Mili = currentOrgan[`${id}_b4_mili`]
@@ -199,7 +195,7 @@ export default {
         (aftMili / aftTotal) * 100 - (b4Mili / b4Total) * 100
       const b4Percent = (b4Mili / b4Total) * 100
       const aftPercent = (aftMili / aftTotal) * 100
-      this.modalData = {
+      this.setModalDetailData({
         coupYear,
         orgName,
         year,
@@ -214,7 +210,7 @@ export default {
         aftPercent: aftPercent.toFixed(2),
         percentChange: percentChange.toFixed(2),
         top
-      }
+      })
     },
     handleOpenModal() {
       this.modal = !this.modal
@@ -252,12 +248,16 @@ export default {
   }
   @media #{$mq-mobile} {
     padding-right: 0.8rem;
+    padding-top: 3.2rem;
   }
 }
 
 .organ-container {
   display: flex;
   margin-bottom: 1.6rem;
+  @media #{$mq-mobile} {
+    margin-bottom: 1.3rem;
+  }
 }
 
 .big-label-container {
@@ -271,6 +271,9 @@ export default {
 .content {
   margin-left: 1.2rem;
   width: 100%;
+  @media #{$mq-mobile} {
+    margin-left: 0rem;
+  }
 }
 
 .border {
@@ -312,6 +315,9 @@ export default {
   margin-bottom: 1.6rem;
   &:last-child {
     margin-bottom: 0;
+  }
+  @media #{$mq-mobile} {
+    margin-bottom: 1.3rem;
   }
 }
 

@@ -96,6 +96,10 @@ export default {
   @media #{$mq-tablet} {
     font-size: 1rem;
   }
+  @media #{$mq-mobile} {
+    height: 3rem;
+    line-height: 110%;
+  }
   &:focus {
     background-color: #000;
     color: #fff;

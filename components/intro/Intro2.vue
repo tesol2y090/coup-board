@@ -138,7 +138,7 @@ export default {
 }
 
 .middle-animation {
-  animation: move ease 0.3s;
+  animation: move ease 0.2s;
   transform: translateY(3rem);
   > .title {
     color: #e7384a;

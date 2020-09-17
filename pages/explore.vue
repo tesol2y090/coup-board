@@ -1,18 +1,22 @@
 <template>
   <div class="explore-wrap">
-    <div class="header">
-      <Navbar :path="'Explore'" />
-      <MenuHeader :handleModalInfo="handleModalInfo" />
-      <LabelHeader />
-    </div>
     <div class="header-mobile">
-      <Navbar :path="'Explore'" />
+      <Navbar :path="'Explore'" :handleModalNavbar="handleModalNavbar" />
       <LabelHeader />
+      <TitleHeader />
       <MenuHeader :handleModalInfo="handleModalInfo" />
+    </div>
+    <div class="header">
+      <Navbar :path="'Explore'" :handleModalNavbar="handleModalNavbar" />
+      <MenuHeader :handleModalInfo="handleModalInfo" />
+      <LabelHeader />
     </div>
     <div class="content">
       <TitleHeader />
-      <TimelineContent />
+      <TimelineContent
+        :setModalDetailData="setModalDetailData"
+        :handleModalDetail="handleModalDetail"
+      />
       <div class="nav-container">
         <div class="nav-left">
           ลองสำรวจด้วยตนเอง
@@ -35,6 +39,15 @@
       </div>
     </div>
     <ModalInfo v-if="modalInfo" :handleModalInfo="handleModalInfo" />
+    <ModalDetail
+      v-if="showModalDetail"
+      :data="modalDetailData"
+      :handleOpenModal="handleModalDetail"
+    />
+    <ModalNavbar
+      v-if="showModalNavbar"
+      :handleModalNavbar="handleModalNavbar"
+    />
   </div>
 </template>
 
@@ -45,6 +58,8 @@ import LabelHeader from '~/components/explore/labelHeader'
 import TitleHeader from '~/components/explore/titleHeader'
 import TimelineContent from '~/components/explore/timelineContent'
 import ModalInfo from '~/components/modalInfo'
+import ModalDetail from '~/components/explore/element/modal'
+import ModalNavbar from '~/components/modalNavbar'
 
 export default {
   components: {
@@ -52,18 +67,31 @@ export default {
     MenuHeader,
     LabelHeader,
     TimelineContent,
-    ModalInfo
+    ModalInfo,
+    ModalDetail
   },
   data() {
     return {
       summaryIcon: require('~/assets/images/Component/Button/ic-summary.svg'),
       homeIcon: require('~/assets/images/Component/Button/ic-home.svg'),
-      modalInfo: false
+      modalInfo: false,
+      showModalDetail: false,
+      showModalNavbar: false,
+      modalDetailData: {}
     }
   },
   methods: {
     handleModalInfo() {
       this.modalInfo = !this.modalInfo
+    },
+    handleModalDetail() {
+      this.showModalDetail = !this.showModalDetail
+    },
+    setModalDetailData(newData) {
+      this.modalDetailData = newData
+    },
+    handleModalNavbar() {
+      this.showModalNavbar = !this.showModalNavbar
     }
   }
 }
@@ -102,6 +130,9 @@ export default {
   height: 32rem;
   position: relative;
   display: flex;
+  @media #{$mq-mobile} {
+    flex-direction: column;
+  }
 }
 
 .nav-left {
@@ -114,6 +145,12 @@ export default {
   align-items: center;
   justify-content: center;
   font-size: 3rem;
+  background-color: #384254;
+  @media #{$mq-mobile} {
+    font-size: 1.6rem;
+    width: 100%;
+    height: 50%;
+  }
 }
 
 .nav-right {
@@ -126,6 +163,11 @@ export default {
   align-items: center;
   justify-content: center;
   font-size: 3rem;
+  @media #{$mq-mobile} {
+    font-size: 1.6rem;
+    width: 100%;
+    height: 50%;
+  }
 }
 
 .btn-con {
@@ -138,6 +180,10 @@ export default {
   margin-top: 2rem;
   display: flex;
   align-items: center;
+  @media #{$mq-mobile} {
+    font-size: 1.6rem;
+    padding: 0.8rem;
+  }
 }
 
 .icon {

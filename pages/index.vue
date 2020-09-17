@@ -1,6 +1,10 @@
 <template>
   <div>
-    <Navbar :path="'Home'" />
+    <ModalNavbar
+      v-if="showModalNavbar"
+      :handleModalNavbar="handleModalNavbar"
+    />
+    <Navbar :path="'Home'" :handleModalNavbar="handleModalNavbar" />
     <swiper
       ref="mySwiper"
       :options="swiperOptions"
@@ -55,6 +59,7 @@ import Intro3 from '~/components/intro/Intro3'
 import Intro4 from '~/components/intro/Intro4'
 import Intro6 from '~/components/intro/Intro6'
 import Intro7 from '~/components/intro/Intro7'
+import ModalNavbar from '~/components/modalNavbar'
 
 export default {
   components: {
@@ -86,7 +91,8 @@ export default {
       navigation: {
         nextEl: '.swiper-btn-next',
         prevEl: '.swiper-btn-prev'
-      }
+      },
+      showModalNavbar: false
     }
   },
   computed: {
@@ -103,6 +109,9 @@ export default {
     },
     handleGotoSlide(page) {
       this.$refs.mySwiper.$swiper.slideTo(1, 1000)
+    },
+    handleModalNavbar() {
+      this.showModalNavbar = !this.showModalNavbar
     }
   }
 }

@@ -69,14 +69,14 @@
             <div class="waffle-after" v-for="i in 450" v-bind:key="i" />
           </div>
           <div v-if="part === 1" class="waffle-label">
-            <div style="flex: 1">
+            <div>
               <h3 style="color: #FFF">30 คน</h3>
               <p style="color: #fff">จาก 441 คน</p>
             </div>
             <h3 style="color: #fff">6.80 %</h3>
           </div>
           <div v-if="part === 2" class="waffle-label">
-            <div style="flex: 1">
+            <div>
               <h3 style="color: #FFF">76 คน</h3>
               <p style="color: #fff">จาก 417 คน</p>
             </div>

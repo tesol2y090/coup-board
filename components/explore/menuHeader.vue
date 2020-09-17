@@ -43,6 +43,7 @@ export default {
   }
   @media #{$mq-mobile} {
     flex-direction: column-reverse;
+    background-color: #384254;
   }
 }
 

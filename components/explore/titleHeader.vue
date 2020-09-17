@@ -16,8 +16,8 @@ export default {}
   background-color: #384254;
   text-align: center;
   @media #{$mq-mobile} {
-    height: 18.6rem;
-    padding: 6.3rem 2.6rem 0 2.6rem;
+    height: 14.6rem;
+    padding: 1.6rem 2.6rem 0 2.6rem;
   }
 }
 

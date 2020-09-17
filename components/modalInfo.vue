@@ -97,14 +97,33 @@ export default {
   display: flex;
   justify-content: center;
   text-align: left;
+  overflow-y: scroll;
   &-left {
     color: #000;
     width: 41.4rem;
+    @media #{$mq-mobile} {
+      width: 100%;
+    }
   }
   &-right {
     color: #000;
     width: 41.4rem;
     margin-left: 6rem;
+    @media #{$mq-mobile} {
+      margin-left: 0rem;
+      width: 100%;
+    }
+  }
+  @media #{$mq-mobile} {
+    flex-direction: column;
+    padding: 0 2rem 3rem 2rem;
+    margin-top: 1.5rem;
+  }
+}
+
+h4 {
+  @media #{$mq-mobile} {
+    text-align: center;
   }
 }
 

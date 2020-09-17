@@ -4,39 +4,85 @@
     <div class="right">
       <div class="pill-container">
         <div class="hint">2557</div>
-        <Face57 />
+        <div class="leader-face-desktop">
+          <Face57 />
+        </div>
+        <div class="leader-face-mobile">
+          <Face57Mobile />
+        </div>
       </div>
       <div class="pill-container">
         <div class="hint">2549</div>
-        <Face49 />
+        <div class="leader-face-desktop">
+          <Face49 />
+        </div>
+        <div class="leader-face-mobile">
+          <Face49Mobile />
+        </div>
       </div>
       <div class="pill-container">
         <div class="hint">2534</div>
-        <Face34 />
+        <div class="leader-face-desktop">
+          <Face34 />
+        </div>
+        <div class="leader-face-mobile">
+          <Face34Mobile />
+        </div>
       </div>
       <div class="pill-container">
         <div class="hint">2520</div>
-        <Face20 />
+        <div class="leader-face-desktop">
+          <Face20 />
+        </div>
+        <div class="leader-face-mobile">
+          <Face20Mobile />
+        </div>
       </div>
       <div class="pill-container">
         <div class="hint">2519</div>
-        <Face19 />
+        <div class="leader-face-desktop">
+          <Face19 />
+        </div>
+        <div class="leader-face-mobile">
+          <Face19Mobile />
+        </div>
       </div>
       <div class="pill-container">
         <div class="hint">2514</div>
-        <Face14 />
+        <div class="leader-face-desktop">
+          <Face14 />
+        </div>
+        <div class="leader-face-mobile">
+          <Face14Mobile />
+        </div>
       </div>
       <div class="pill-container">
         <div class="hint">2501</div>
-        <Face01 />
+        <div class="leader-face-desktop">
+          <Face01 />
+        </div>
+        <div class="leader-face-mobile">
+          <Face01Mobile />
+        </div>
       </div>
       <div class="pill-container">
         <div class="hint">2500</div>
-        <Face00 />
+        <div class="leader-face-desktop">
+          <Face00 />
+        </div>
+        <div class="leader-face-mobile">
+          <Face00Mobile />
+        </div>
       </div>
       <div class="pill-container">
-        <div class="hint">2490 - 94</div>
-        <Face49 />
+        <div class="hint-desktop">2490 - 94</div>
+        <div class="hint-mobile">90 - 94</div>
+        <div class="leader-face-desktop">
+          <Face94 />
+        </div>
+        <div class="leader-face-mobile">
+          <Face94Mobile />
+        </div>
       </div>
     </div>
   </div>
@@ -52,6 +98,17 @@ import Face14 from '~/components/assest/leaderFace/face14'
 import Face01 from '~/components/assest/leaderFace/face01'
 import Face00 from '~/components/assest/leaderFace/face00'
 import Face94 from '~/components/assest/leaderFace/face94'
+
+import Face57Mobile from '~/components/assest/leaderFace/face57Mobile'
+import Face49Mobile from '~/components/assest/leaderFace/face49Mobile'
+import Face34Mobile from '~/components/assest/leaderFace/face34Mobile'
+import Face20Mobile from '~/components/assest/leaderFace/face20Mobile'
+import Face19Mobile from '~/components/assest/leaderFace/face19Mobile'
+import Face14Mobile from '~/components/assest/leaderFace/face14Mobile'
+import Face01Mobile from '~/components/assest/leaderFace/face01Mobile'
+import Face00Mobile from '~/components/assest/leaderFace/face00Mobile'
+import Face94Mobile from '~/components/assest/leaderFace/face94Mobile'
+
 export default {
   components: {
     Face57,
@@ -62,7 +119,16 @@ export default {
     Face14,
     Face01,
     Face00,
-    Face94
+    Face94,
+    Face57Mobile,
+    Face49Mobile,
+    Face34Mobile,
+    Face20Mobile,
+    Face19Mobile,
+    Face14Mobile,
+    Face01Mobile,
+    Face00Mobile,
+    Face94Mobile
   },
   data() {
     return {}
@@ -83,6 +149,10 @@ export default {
   @media #{$mq-tablet} {
     padding-left: 1.6rem;
     padding-right: 1.5rem;
+  }
+  @media #{$mq-mobile} {
+    padding: 0.4rem 0.8rem 0.4rem 1rem;
+    height: 3.6rem;
   }
 }
 
@@ -115,9 +185,48 @@ export default {
     width: 3.6rem;
     margin-left: 1rem;
   }
+  @media #{$mq-mobile} {
+    width: 2rem;
+    margin-left: 0.4rem;
+  }
 }
 
 .hint {
   color: #fff;
+  @media #{$mq-mobile} {
+    font-size: 0.8rem;
+  }
+}
+
+.hint-desktop {
+  color: #fff;
+  display: inline;
+  font-size: 1.4rem;
+  @media #{$mq-mobile} {
+    display: none;
+  }
+}
+
+.hint-mobile {
+  display: none;
+  @media #{$mq-mobile} {
+    font-size: 0.8rem;
+    color: #fff;
+    display: inline;
+  }
+}
+
+.leader-face-desktop {
+  display: inline;
+  @media #{$mq-mobile} {
+    display: none;
+  }
+}
+
+.leader-face-mobile {
+  display: none;
+  @media #{$mq-mobile} {
+    display: inline;
+  }
 }
 </style>
