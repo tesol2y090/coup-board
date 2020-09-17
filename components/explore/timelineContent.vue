@@ -27,38 +27,47 @@
                 <div class="right-dash" />
                 <Pill
                   :percent="data.diff_57"
+                  :showPillText="showPillText"
                   @click.native="handleShowModal(data.org_name, '57')"
                 />
                 <Pill
                   :percent="data.diff_49"
+                  :showPillText="showPillText"
                   @click.native="handleShowModal(data.org_name, '49')"
                 />
                 <Pill
                   :percent="data.diff_34"
+                  :showPillText="showPillText"
                   @click.native="handleShowModal(data.org_name, '34')"
                 />
                 <Pill
                   :percent="data.diff_20"
+                  :showPillText="showPillText"
                   @click.native="handleShowModal(data.org_name, '20')"
                 />
                 <Pill
                   :percent="data.diff_19"
+                  :showPillText="showPillText"
                   @click.native="handleShowModal(data.org_name, '19')"
                 />
                 <Pill
                   :percent="data.diff_14"
+                  :showPillText="showPillText"
                   @click.native="handleShowModal(data.org_name, '14')"
                 />
                 <Pill
                   :percent="data.diff_01"
+                  :showPillText="showPillText"
                   @click.native="handleShowModal(data.org_name, '01')"
                 />
                 <Pill
                   :percent="data.diff_00"
+                  :showPillText="showPillText"
                   @click.native="handleShowModal(data.org_name, '00')"
                 />
                 <Pill
                   :percent="data.diff_90"
+                  :showPillText="showPillText"
                   @click.native="handleShowModal(data.org_name, '90')"
                 />
               </div>
@@ -80,38 +89,47 @@
             <div class="right-dash" />
             <Pill
               :percent="data.diff_57"
+              :showPillText="showPillText"
               @click.native="handleShowModal(data.org_name, '57')"
             />
             <Pill
               :percent="data.diff_49"
+              :showPillText="showPillText"
               @click.native="handleShowModal(data.org_name, '49')"
             />
             <Pill
               :percent="data.diff_34"
+              :showPillText="showPillText"
               @click.native="handleShowModal(data.org_name, '34')"
             />
             <Pill
               :percent="data.diff_20"
+              :showPillText="showPillText"
               @click.native="handleShowModal(data.org_name, '20')"
             />
             <Pill
               :percent="data.diff_19"
+              :showPillText="showPillText"
               @click.native="handleShowModal(data.org_name, '19')"
             />
             <Pill
               :percent="data.diff_14"
+              :showPillText="showPillText"
               @click.native="handleShowModal(data.org_name, '14')"
             />
             <Pill
               :percent="data.diff_01"
+              :showPillText="showPillText"
               @click.native="handleShowModal(data.org_name, '01')"
             />
             <Pill
               :percent="data.diff_00"
+              :showPillText="showPillText"
               @click.native="handleShowModal(data.org_name, '00')"
             />
             <Pill
               :percent="data.diff_90"
+              :showPillText="showPillText"
               @click.native="handleShowModal(data.org_name, '90')"
             />
           </div>
@@ -135,7 +153,7 @@ export default {
     Pill,
     Modal
   },
-  props: ['setModalDetailData', 'handleModalDetail'],
+  props: ['setModalDetailData', 'handleModalDetail', 'showPillText'],
   data() {
     return {
       data,

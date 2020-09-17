@@ -2,7 +2,7 @@
   <div class="container">
     <div class="left">
       <Dropdown />
-      <RatioBtn />
+      <RatioBtn :handleShowPillText="handleShowPillText" />
     </div>
     <div class="right">
       <Label :handleModalInfo="handleModalInfo" />
@@ -23,7 +23,7 @@ export default {
   data() {
     return {}
   },
-  props: ['handleModalInfo']
+  props: ['handleModalInfo', 'handleShowPillText']
 }
 </script>
 

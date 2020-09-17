@@ -20,6 +20,7 @@
 
 <script>
 export default {
+  props: ['handleShowPillText'],
   data() {
     return {
       isClick: false
@@ -28,16 +29,7 @@ export default {
   methods: {
     handleClick() {
       this.isClick = !this.isClick
-      const allPill = document.getElementsByClassName('percent-text')
-      if (this.isClick) {
-        for (let i = 0; i < allPill.length; i++) {
-          allPill[i].style.display = 'inline'
-        }
-      } else {
-        for (let i = 0; i < allPill.length; i++) {
-          allPill[i].style.display = 'none'
-        }
-      }
+      this.handleShowPillText()
     }
   }
 }

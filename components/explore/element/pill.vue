@@ -5,7 +5,12 @@
     class="pill-container noto-thai"
     :style="`${styleBgPill(percent)}`"
   >
-    <span class="percent-text">
+    <span
+      :class="{
+        'percent-text': !showPillText,
+        'show-percent-text': showPillText
+      }"
+    >
       <strong class="noto-thai" :style="`${styleFont(this.percent)}`">{{
         this.percent
       }}</strong></span
@@ -16,7 +21,7 @@
 <script>
 import * as d3 from 'd3'
 export default {
-  props: ['percent'],
+  props: ['percent', 'showPillText'],
   methods: {
     percentToStyle(percent) {
       const scaleColor = d3
@@ -80,6 +85,17 @@ export default {
     width: 2rem;
     border-radius: 50%;
     margin-left: 0.4rem;
+  }
+}
+
+.show-percent-text {
+  font-size: 1.2rem;
+  display: inline;
+  @media #{$mq-tablet} {
+    font-size: 0.8rem;
+  }
+  @media #{$mq-mobile} {
+    font-size: 5px;
   }
 }
 

@@ -4,11 +4,17 @@
       <Navbar :path="'Explore'" :handleModalNavbar="handleModalNavbar" />
       <LabelHeader />
       <TitleHeader />
-      <MenuHeader :handleModalInfo="handleModalInfo" />
+      <MenuHeader
+        :handleModalInfo="handleModalInfo"
+        :handleShowPillText="handleShowPillText"
+      />
     </div>
     <div class="header">
       <Navbar :path="'Explore'" :handleModalNavbar="handleModalNavbar" />
-      <MenuHeader :handleModalInfo="handleModalInfo" />
+      <MenuHeader
+        :handleModalInfo="handleModalInfo"
+        :handleShowPillText="handleShowPillText"
+      />
       <LabelHeader />
     </div>
     <div class="content">
@@ -16,6 +22,7 @@
       <TimelineContent
         :setModalDetailData="setModalDetailData"
         :handleModalDetail="handleModalDetail"
+        :showPillText="showPillText"
       />
       <div class="nav-container">
         <div class="nav-left">
@@ -77,7 +84,8 @@ export default {
       modalInfo: false,
       showModalDetail: false,
       showModalNavbar: false,
-      modalDetailData: {}
+      modalDetailData: {},
+      showPillText: false
     }
   },
   methods: {
@@ -92,6 +100,9 @@ export default {
     },
     handleModalNavbar() {
       this.showModalNavbar = !this.showModalNavbar
+    },
+    handleShowPillText() {
+      this.showPillText = !this.showPillText
     }
   }
 }

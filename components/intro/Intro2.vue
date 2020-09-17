@@ -20,6 +20,24 @@
           </svg>
         </div>
         <img :src="pravuthFaceImg" />
+        <div class="box-ipad">
+          <div class="box-ipad-top">
+            หลังรัฐประหาร 2557<br />
+            <span class="text-red"
+              >“การเปลี่ยนแปลง แต่งตั้งกรรมการรัฐวิสาหกิจ”</span
+            ><br />
+            ถือเป็นนโยบายหนึ่งของ การปฏิรูปรัฐวิสาหกิจ ภายใต้การนำของ
+            พลเอกประยุทธ์ จันทร์โอชา
+          </div>
+          <div class="box-ipad-bottom noto-thai">
+            ความน่าสนใจอยู่ที่ว่าการเปลี่ยนแปลง/แต่งตั้งกรรมการรัฐวิสาหกิจบาง
+            องค์กรในครั้งนี้(เฉพาะส่วนที่เป็น อำนาจของคณะรัฐมนตรี)<br />
+            <span class="text-red">
+              กลับปรากฎว่ามี “นายพลคนทหาร” ได้เป็นกรรมการรัฐวิสาหกิจเป็น
+              จำนวนที่น่าจับตามอง..</span
+            >
+          </div>
+        </div>
       </div>
       <div v-if="part === 2" class="box" style="font-size: 2rem;">
         ความน่าสนใจอยู่ที่ว่าการเปลี่ยนแปลง/แต่งตั้งกรรมการรัฐวิสาหกิจบาง
@@ -86,7 +104,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  @media #{$mq-mobile} {
+  @media #{$mq-tablet} {
+    flex-direction: column;
   }
 }
 
@@ -112,6 +131,9 @@ export default {
   position: absolute;
   top: -5.5rem;
   width: 32.2rem;
+  @media #{$mq-tablet} {
+    color: #e7384a;
+  }
   @media #{$mq-mobile} {
     color: #e7384a;
     top: -10rem;
@@ -162,5 +184,28 @@ export default {
 
 .text-red {
   color: #e7384a;
+}
+
+.box-ipad {
+  display: none;
+  @media #{$mq-tablet} {
+    display: inline;
+    padding: 2rem;
+    border-radius: 10px;
+    background: #fff;
+    width: 34rem;
+    margin-top: 5rem;
+    text-align: center;
+    &-top {
+      font-size: 2.4rem;
+    }
+    &-bottom {
+      margin-top: 4rem;
+      font-size: 2rem;
+    }
+  }
+  @media #{$mq-mobile} {
+    display: none;
+  }
 }
 </style>
