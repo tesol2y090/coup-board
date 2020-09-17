@@ -91,16 +91,16 @@
               @click.native="handleShowModal(data.org_name, '34')"
             />
             <Pill
+              :percent="data.diff_20"
+              @click.native="handleShowModal(data.org_name, '20')"
+            />
+            <Pill
               :percent="data.diff_19"
               @click.native="handleShowModal(data.org_name, '19')"
             />
             <Pill
               :percent="data.diff_14"
               @click.native="handleShowModal(data.org_name, '14')"
-            />
-            <Pill
-              :percent="data.diff_20"
-              @click.native="handleShowModal(data.org_name, '20')"
             />
             <Pill
               :percent="data.diff_01"
