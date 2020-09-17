@@ -19,7 +19,7 @@
             <polygon points="0,0 13,26 26,0" fill="white" />
           </svg>
         </div>
-        <img :src="pravuthFaceImg" />
+        <img :src="pravuthFaceImg" class="pravuth-img" />
         <div class="box-ipad">
           <div class="box-ipad-top">
             หลังรัฐประหาร 2557<br />
@@ -30,6 +30,24 @@
             พลเอกประยุทธ์ จันทร์โอชา
           </div>
           <div class="box-ipad-bottom noto-thai">
+            ความน่าสนใจอยู่ที่ว่าการเปลี่ยนแปลง/แต่งตั้งกรรมการรัฐวิสาหกิจบาง
+            องค์กรในครั้งนี้(เฉพาะส่วนที่เป็น อำนาจของคณะรัฐมนตรี)<br />
+            <span class="text-red">
+              กลับปรากฎว่ามี “นายพลคนทหาร” ได้เป็นกรรมการรัฐวิสาหกิจเป็น
+              จำนวนที่น่าจับตามอง..</span
+            >
+          </div>
+        </div>
+        <div class="box-mobile">
+          <div v-if="part === 1" class="box-mobile-before">
+            หลังรัฐประหาร 2557<br />
+            <span class="text-red"
+              >“การเปลี่ยนแปลง แต่งตั้งกรรมการรัฐวิสาหกิจ”</span
+            ><br />
+            ถือเป็นนโยบายหนึ่งของ การปฏิรูปรัฐวิสาหกิจ ภายใต้การนำของ
+            พลเอกประยุทธ์ จันทร์โอชา
+          </div>
+          <div v-if="part === 2" class="box-mobile-after">
             ความน่าสนใจอยู่ที่ว่าการเปลี่ยนแปลง/แต่งตั้งกรรมการรัฐวิสาหกิจบาง
             องค์กรในครั้งนี้(เฉพาะส่วนที่เป็น อำนาจของคณะรัฐมนตรี)<br />
             <span class="text-red">
@@ -106,6 +124,10 @@ export default {
   justify-content: center;
   @media #{$mq-tablet} {
     flex-direction: column;
+    top: 18rem;
+  }
+  @media #{$mq-tablet} {
+    top: 0;
   }
 }
 
@@ -136,7 +158,9 @@ export default {
   }
   @media #{$mq-mobile} {
     color: #e7384a;
-    top: -10rem;
+    width: 23rem;
+    font-size: 2.4rem;
+    top: -6.3rem;
   }
 }
 
@@ -148,6 +172,9 @@ export default {
   font-size: 2.4rem;
   color: #000000;
   animation: fadeInAnimation ease 0.7s;
+  @media #{$mq-mobile} {
+    display: none;
+  }
 }
 
 @keyframes fadeInAnimation {
@@ -206,6 +233,30 @@ export default {
   }
   @media #{$mq-mobile} {
     display: none;
+  }
+}
+
+.box-mobile {
+  display: none;
+  @media #{$mq-mobile} {
+    display: inline;
+    text-align: center;
+    margin-top: 2.6rem;
+    &-before {
+      color: #fff;
+      font-size: 1.8rem;
+    }
+    &-after {
+      color: #fff;
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.pravuth-img {
+  @media #{$mq-mobile} {
+    width: 16rem;
+    height: 16rem;
   }
 }
 </style>

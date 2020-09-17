@@ -60,7 +60,8 @@ import { mapState } from 'vuex'
 export default {
   data() {
     return {
-      onSlide7: false
+      onSlide7: false,
+      isTablet: window.innerWidth <= 1024 && window.innerWidth > 768
     }
   },
   props: {
@@ -74,7 +75,10 @@ export default {
   },
   watch: {
     current_slide() {
-      if (this.current_slide === 7) {
+      if (
+        (this.current_slide === 7 && !this.isTablet) ||
+        (this.current_slide === 6 && this.isTablet)
+      ) {
         setTimeout(() => {
           this.onSlide7 = true
         }, 100)

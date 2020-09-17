@@ -14,7 +14,7 @@
         <intro1 :handleGotoSlide="handleGotoSlide" />
       </swiper-slide>
       <swiper-slide> </swiper-slide>
-      <swiper-slide> </swiper-slide>
+      <swiper-slide v-if="!isTablet"> </swiper-slide>
       <swiper-slide class="dark-blue">
         <intro3 />
       </swiper-slide>
@@ -33,16 +33,32 @@
     <div v-if="current_slide === 2">
       <intro2 :part="2" />
     </div>
-    <div v-if="current_slide === 4">
+    <div
+      v-if="
+        (current_slide === 4 && !isTablet) || (current_slide === 3 && isTablet)
+      "
+    >
       <intro4 :part="1" />
     </div>
-    <div v-if="current_slide === 5">
+    <div
+      v-if="
+        (current_slide === 5 && !isTablet) || (current_slide === 4 && isTablet)
+      "
+    >
       <intro4 :part="2" />
     </div>
-    <div v-if="current_slide === 6">
+    <div
+      v-if="
+        (current_slide === 6 && !isTablet) || (current_slide === 5 && isTablet)
+      "
+    >
       <intro6 :part="1" />
     </div>
-    <div v-if="current_slide === 7">
+    <div
+      v-if="
+        (current_slide === 7 && !isTablet) || (current_slide === 6 && isTablet)
+      "
+    >
       <intro6 :part="2" />
     </div>
   </div>
@@ -92,7 +108,8 @@ export default {
         nextEl: '.swiper-btn-next',
         prevEl: '.swiper-btn-prev'
       },
-      showModalNavbar: false
+      showModalNavbar: false,
+      isTablet: window.innerWidth <= 1024 && window.innerWidth > 768
     }
   },
   computed: {
@@ -112,6 +129,12 @@ export default {
     },
     handleModalNavbar() {
       this.showModalNavbar = !this.showModalNavbar
+    }
+  },
+  watch: {
+    current_slide() {
+      console.log(this.current_slide)
+      console.log(this.isTablet)
     }
   }
 }
