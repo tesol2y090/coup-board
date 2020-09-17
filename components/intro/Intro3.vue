@@ -81,9 +81,11 @@ export default {
     justify-content: center;
     font-size: 4.8rem;
     padding-top: 9rem;
-    background-color: #f6efeb;
+    background-color: #384254;
+    height: 100vh;
   }
   @media #{$mq-mobile} {
+    background: #f6efeb;
     margin-top: 0;
     padding: 10rem 2rem;
     height: calc(100vh - 5rem);

@@ -172,12 +172,34 @@
         ก็ปรากฎว่ารัฐวิสาหกิจส่วนใหญ่ (35 องค์กร) ยังให้ผลต่างเป็นบวก
         นั่นหมายความว่า สัดส่วนทหารหลังรัฐประหารยังมากกว่าสัดส่วนฯ ก่อนรัฐประหาร
       </p>
-      <div
+      <!-- <div
         class="flourish-embed flourish-container"
         data-src="story/505141"
         data-url="https://flo.uri.sh/story/505141/embed"
       >
         <script src="https://public.flourish.studio/resources/embed.js"></script>
+      </div> -->
+      <iframe
+        src="https://flo.uri.sh/story/505141/embed"
+        frameborder="0"
+        scrolling="no"
+        style="width:100%;height:600px;"
+        aria-label=""
+      ></iframe>
+      <div
+        style="width:100%!;margin-top:4px!important;text-align:right!important;"
+      >
+        <a
+          class="flourish-credit"
+          href="https://public.flourish.studio/story/505141/?utm_source=embed&utm_campaign=story/505141"
+          target="_top"
+          style="text-decoration:none!important"
+          ><img
+            alt="Made with Flourish"
+            src="https://public.flourish.studio/resources/made_with_flourish.svg"
+            style="width:105px!important;height:16px!important;border:none!important;margin:0!important;"
+          />
+        </a>
       </div>
       <p class="top30 noto-thai">
         และเมื่อลองนำผลต่างทั้งหมดมาจัดเรียงตามลำดับจากน้อยไปมาก

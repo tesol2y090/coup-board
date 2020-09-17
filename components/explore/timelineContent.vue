@@ -38,16 +38,16 @@
                   @click.native="handleShowModal(data.org_name, '34')"
                 />
                 <Pill
+                  :percent="data.diff_20"
+                  @click.native="handleShowModal(data.org_name, '20')"
+                />
+                <Pill
                   :percent="data.diff_19"
                   @click.native="handleShowModal(data.org_name, '19')"
                 />
                 <Pill
                   :percent="data.diff_14"
                   @click.native="handleShowModal(data.org_name, '14')"
-                />
-                <Pill
-                  :percent="data.diff_20"
-                  @click.native="handleShowModal(data.org_name, '20')"
                 />
                 <Pill
                   :percent="data.diff_01"
@@ -189,8 +189,14 @@ export default {
       const { org_name: orgName, y: year, logo, cat, minis } = currentOrgan
       const b4Mili = currentOrgan[`${id}_b4_mili`]
       const b4Total = currentOrgan[`${id}_b4_total`]
-      const aftMili = currentOrgan[`${id}_aft_mili`]
-      const aftTotal = currentOrgan[`${id}_aft_total`]
+      const aftMili =
+        id === '90'
+          ? currentOrgan[`94_aft_mili`]
+          : currentOrgan[`${id}_aft_mili`]
+      const aftTotal =
+        id === '90'
+          ? currentOrgan[`94_aft_total`]
+          : currentOrgan[`${id}_aft_total`]
       const percentChange =
         (aftMili / aftTotal) * 100 - (b4Mili / b4Total) * 100
       const b4Percent = (b4Mili / b4Total) * 100

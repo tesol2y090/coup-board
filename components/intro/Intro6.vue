@@ -116,7 +116,7 @@ export default {
     width: 100%;
     display: flex;
     justify-content: center;
-    height: 5rem;
+    height: auto;
   }
 }
 
