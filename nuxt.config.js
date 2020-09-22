@@ -109,5 +109,11 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {}
+  build: {},
+  generate: {
+    dir: 'dist/coup-board'
+  },
+  router: {
+    base: '/coup-board/'
+  }
 }
