@@ -55,7 +55,7 @@ export default {
   margin-left: 2.5rem;
   font-size: 1.2rem;
   color: #000;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.05);
   z-index: 2;
   cursor: pointer;
   &:last-child {

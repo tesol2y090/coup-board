@@ -202,10 +202,10 @@ export default {
 
 <style lang="scss" scoped>
 .modal-desktop {
-  width: 100%;
+  width: calc(100vw - 5rem);
   height: 23.8rem;
   background: #ffffff;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.15);
   border-radius: 1rem;
   position: absolute;
   z-index: 10;
