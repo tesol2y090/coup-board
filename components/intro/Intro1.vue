@@ -2,12 +2,8 @@
   <div class="intro-con">
     <div class="content-con">
       <div class="left">
-        <div class="title">
-          ทหารบนบอร์ด รัฐวิสาหกิจ:
-        </div>
-        <div class="subtitle">
-          อ่อนไหวแค่ไหน ต่อรัฐประหาร
-        </div>
+        <div class="title">ทหารบนบอร์ด รัฐวิสาหกิจ:</div>
+        <div class="subtitle">อ่อนไหวแค่ไหน ต่อรัฐประหาร</div>
       </div>
       <div class="right-desktop">
         <img :src="soliderGroup" class="img-group" />
@@ -30,14 +26,14 @@
 
 <script>
 export default {
-  props: ['handleGotoSlide'],
+  props: ["handleGotoSlide"],
   data() {
     return {
-      soliderGroup: require('~/assets/images/solider-group.svg'),
-      soliderGroupMobile: require('~/assets/images/group-people-mobile.svg')
-    }
-  }
-}
+      soliderGroup: require("~/assets/images/solider-group.svg"),
+      soliderGroupMobile: require("~/assets/images/group-people-mobile.svg"),
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -49,6 +45,7 @@ export default {
   justify-content: center;
   width: 1280px;
   margin: 0 auto;
+
   @media #{$mq-tablet} {
     width: 1024px;
     flex-direction: column;
@@ -59,7 +56,7 @@ export default {
 }
 
 .left {
-  width: 50%;
+  width: 640px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -107,7 +104,7 @@ export default {
 }
 
 .right-desktop {
-  width: 50%;
+  width: 640px;
   height: 100%;
   display: flex;
   align-items: center;

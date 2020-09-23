@@ -3,13 +3,19 @@
     <div class="content-con">
       <div class="left">
         <div class="left-container">
-          <div class="title">เปรียบเทียบสัดส่วน<br />เพิ่มขึ้น 1.67 เท่า</div>
+          <div class="title">
+            เปรียบเทียบสัดส่วน
+            <br />เพิ่มขึ้น 1.67 เท่า
+          </div>
           <div class="bottom">
-            นั่นหมายความว่า ก่อนรัฐประหาร 2557<br />ในจำนวนกรรมการฯ ทั้งหมด 100
-            คน<br />จะมีทหารเป็นกรรมการฯ อยู่ประมาณ 6 คน <br /><br />
-            ในขณะที่ หลังรัฐประหาร 2557<br />
-            จะมีทหารเป็นกรรมการฯ อยู่ประมาณ 18 คน<br />
-            เพิ่มขึ้นถึง 11 คน หรือ 1.67 เท่า
+            นั่นหมายความว่า ก่อนรัฐประหาร 2557
+            <br />ในจำนวนกรรมการฯ ทั้งหมด 100
+            คน
+            <br />จะมีทหารเป็นกรรมการฯ อยู่ประมาณ 6 คน
+            <br />
+            <br />ในขณะที่ หลังรัฐประหาร 2557
+            <br />จะมีทหารเป็นกรรมการฯ อยู่ประมาณ 18 คน
+            <br />เพิ่มขึ้นถึง 11 คน หรือ 1.67 เท่า
           </div>
         </div>
       </div>
@@ -20,7 +26,7 @@
             <div class="splint-left-container">
               <!-- <div class="waffle-container" v-if="part === 1">
                 <div class="waffle-before" v-for="i in 100" v-bind:key="i" />
-              </div> -->
+              </div>-->
               <div
                 :class="{
                   'waffle-container': true,
@@ -36,7 +42,7 @@
             <div class="splint-right-container">
               <!-- <div class="waffle-container" v-show="part === 1">
                 <div class="waffle-before" v-for="i in 100" v-bind:key="i" />
-              </div> -->
+              </div>-->
               <div
                 :class="{
                   'waffle-container': true,
@@ -56,22 +62,22 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState } from "vuex";
 export default {
   data() {
     return {
       onSlide7: false,
-      isTablet: window.innerWidth <= 1024 && window.innerWidth > 768
-    }
+      isTablet: window.innerWidth <= 1024 && window.innerWidth > 768,
+    };
   },
   props: {
     part: {
       type: Number,
-      default: 0
-    }
+      default: 0,
+    },
   },
   computed: {
-    ...mapState('store', ['current_slide'])
+    ...mapState("store", ["current_slide"]),
   },
   watch: {
     current_slide() {
@@ -80,18 +86,18 @@ export default {
         (this.current_slide === 6 && this.isTablet)
       ) {
         setTimeout(() => {
-          this.onSlide7 = true
-        }, 100)
+          this.onSlide7 = true;
+        }, 100);
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
 .container {
   height: calc(100vh - 8rem);
-  width: 1280;
+  width: 100vw;
   display: flex;
   align-items: center;
   margin: 0 auto;
@@ -105,7 +111,8 @@ export default {
 .content-con {
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: 1280px;
+  margin: 0 auto;
   height: 100%;
   @media #{$mq-tablet} {
     flex-direction: column;
@@ -139,14 +146,16 @@ export default {
 }
 
 .left-container {
-  width: 640px;
-  height: 100%;
+  // width: 640px;
+  // height: 100%;
   position: relative;
   float: right;
   top: 97px;
+  right: 12rem;
   @media #{$mq-tablet} {
     height: auto;
     text-align: center;
+    right: 0;
   }
 }
 

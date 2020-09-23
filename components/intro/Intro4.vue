@@ -7,7 +7,9 @@
           <br />
           <div class="left-container-content">
             <p id="left-before-text">
-              ปรากฎว่ามีการแต่งตั้งทหารหรือ<br />อดีตทหารเป็นกรรมการรัฐวิสาหกิจ<br />จำนวน
+              ปรากฎว่ามีการแต่งตั้งทหารหรือ
+              <br />อดีตทหารเป็นกรรมการรัฐวิสาหกิจ
+              <br />จำนวน
               30 คน คิดเป็นร้อยละ 6.80*
               <br />
               <br />
@@ -24,12 +26,13 @@
           <br />
           <div class="left-container-content">
             <p class="left-part2-bg">
-              แต่หลังจากรัฐประหาร 2557 ได้ไม่นาน<br />
-              ปรากฎว่า มีการแต่งตั้งทหารหรืออดีตทหาร<br />
-              เป็นกรรมการรัฐวิสาหกิจ เพิ่มขึ้นถึง 76 คน คิดเป็นร้อยละ 18.23*<br />
+              แต่หลังจากรัฐประหาร 2557 ได้ไม่นาน
+              <br />ปรากฎว่า มีการแต่งตั้งทหารหรืออดีตทหาร
+              <br />เป็นกรรมการรัฐวิสาหกิจ
+              <br />เพิ่มขึ้นถึง 76 คน คิดเป็นร้อยละ 18.23*
               <br />
               <br />
-              *จากจำนวนกรรมการรัฐวิสาหกิจทั้งหมด 417 คน
+              <br />*จากจำนวนกรรมการรัฐวิสาหกิจทั้งหมด 417 คน
             </p>
           </div>
         </div>
@@ -89,24 +92,24 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState } from "vuex";
 export default {
   props: {
     part: {
       type: Number,
-      default: 0
-    }
+      default: 0,
+    },
   },
   computed: {
-    ...mapState('store', ['current_slide'])
-  }
-}
+    ...mapState("store", ["current_slide"]),
+  },
+};
 </script>
 
 <style lang="scss" scoped>
 .container {
   height: calc(100vh - 8rem);
-  width: 1280;
+  width: 100vw;
   display: flex;
   align-items: center;
   margin: 0 auto;
@@ -134,6 +137,7 @@ export default {
   width: 50%;
   height: 100%;
   position: relative;
+  right: 0;
   @media #{$mq-tablet} {
     background-color: #384254;
     color: #fff;
@@ -169,18 +173,21 @@ export default {
 }
 
 .left-container {
-  width: 640px;
-  height: 100%;
+  // width: 640px;
+  // height: 100%;
   position: relative;
   float: right;
   top: 97px;
+  right: 12rem;
   @media #{$mq-tablet} {
     width: 100%;
     text-align: center;
     height: 30rem;
+    right: 0;
   }
   @media #{$mq-mobile} {
     height: 15rem;
+    right: 0;
   }
 }
 
