@@ -1,4 +1,4 @@
-const BASE_URL = 'https://elect.in.th/coup-board'
+const BASE_URL = 'https://elect.in.th/coup-board/'
 export default {
   /*
    ** Nuxt rendering mode
@@ -97,7 +97,11 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     // '@nuxtjs/eslint-module'
+    '@nuxtjs/google-analytics'
   ],
+  googleAnalytics: {
+    id: 'UA-129270906-1'
+  },
   /*
    ** Nuxt.js modules
    */
